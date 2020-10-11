@@ -10,6 +10,7 @@ int main()
 
 	cout << "TEST1" << '\n';
 	cout << "TEST2" << '\n';
+	cout << "login test" << '\n';
 
 	return 0;
 }
