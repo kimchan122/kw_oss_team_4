@@ -21,12 +21,5 @@ int main()
 	cout << "git test" << '\n';
 	cout << "git test" << '\n';
 
-
-	cout << "git test" << '\n';
-	cout << "git test" << '\n';
-	cout << "git test" << '\n';
-	cout << "git test" << '\n';
-	cout << "git test" << '\n';
-
 	return 0;
 }
