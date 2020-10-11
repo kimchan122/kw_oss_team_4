@@ -15,5 +15,7 @@ int main()
 	cout << "login test again and again" << '\n';
 	cout << "login test again and again" << '\n';
 
+	cout << "git test" << '\n';
+
 	return 0;
 }
