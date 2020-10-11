@@ -9,6 +9,7 @@ int main()
 	cout << "YES!"<<'\n';
 
 	cout << "TEST1" << '\n';
+	cout << "TEST2" << '\n';
 
 	return 0;
 }
