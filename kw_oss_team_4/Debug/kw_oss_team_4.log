@@ -1,2 +1,12 @@
 ﻿  main.cpp
+C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\main.cpp(41,45): warning C4244: '인수': 'double'에서 'T'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=float
+          ]
+C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\main.cpp(41,40): warning C4244: '인수': 'double'에서 'T'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=float
+          ]
   kw_oss_team_4.vcxproj -> C:\Users\Administrator\Source\Repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.exe
