@@ -1,25 +1,24 @@
-#include<iostream>
-
-using namespace std;
+#include <SFML/Graphics.hpp>
 
 int main()
 {
-	cout << "can you see this?" << '\n';
+    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
 
-	cout << "YES!"<<'\n';
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
 
-	cout << "TEST1" << '\n';
-	cout << "TEST2" << '\n';
-	cout << "login test again and again" << '\n';
-	cout << "login test again and again" << '\n';
-	cout << "login test again and again" << '\n';
-	cout << "login test again and again" << '\n';
+        window.clear();
+        window.draw(shape);
+        window.display();
+    }
 
-	cout << "git test" << '\n';
-	cout << "git test" << '\n';
-	cout << "git test" << '\n';
-	cout << "git test" << '\n';
-	cout << "git test" << '\n';
-
-	return 0;
+    return 0;
 }
