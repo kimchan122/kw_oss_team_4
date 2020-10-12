@@ -11,8 +11,8 @@ To the team members participating in the project!
  - Download link: https://www.sfml-dev.org/download/sfml/2.5.1/
 
 2. What should we make?
- 2-1. A adventure game
+  2-1. A adventure game
     - The character moves up, down, left and right through the arrow keys.
     
- 2-2. Some mini games
+  2-2. Some mini games
     - Through mini-games, the character has to overcome challenges.
