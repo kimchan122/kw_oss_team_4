@@ -27,7 +27,7 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
+        //dddddsdfsdf
         window.clear();
         
         shape.setPosition(100.f, 100.f);
