@@ -52,6 +52,7 @@ int main()
             sw = 0;
         }
         //cout << "CNT : " << cnt <<", SW : "<<sw<< '\n';
+        //test
         window.display();
     }
 
