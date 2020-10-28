@@ -342,6 +342,7 @@ int main()
         smile.setPosition(500, 30); // 스마일 위치 설정
         window.draw(smile); // 스마일 그리기
         window.display(); // 표시
+        cout << endl;
     }
     
     return 0;
