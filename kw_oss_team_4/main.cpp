@@ -1,8 +1,8 @@
-#include<iostream>
+/*#include<iostream>
 #include <SFML/Graphics.hpp>
 
 using namespace std;
-
+using namespace sf;
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1024, 768), "SFML works!");
@@ -21,6 +21,8 @@ int main()
 
     double cnt = 0;
     int sw = 0;
+    int mouseX = 0; //마우스 좌클릭 x좌표
+    int mouseY = 0; //마우스 좌클릭 y좌표
 
     man.setPosition(512, 384); // 시작 시 캐릭터 좌표 설정
     while (window.isOpen())
@@ -30,6 +32,17 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+            if (event.type == sf::Event::MouseButtonPressed)
+            {
+                if (event.mouseButton.button == sf::Mouse::Left) //마우스 좌클릭 이벤트
+                {
+                    Vector2i pos = Mouse::getPosition(window);
+                    mouseX = pos.x;
+                    mouseY = pos.y;
+                    cout << mouseX << endl;
+                    cout << mouseY << endl;
+                }
+            }
         }
         window.clear();
 
@@ -78,9 +91,9 @@ int main()
 
         double x = man.getPosition().x; // 좌표 확인을 위한 콘솔창 출력
         double y = man.getPosition().y;
-        cout << x << endl;
-        cout << y << endl << endl;
+        //cout << x << endl;
+        //cout << y << endl << endl;
     }
 
     return 0;
-}
+}*/
