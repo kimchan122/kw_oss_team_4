@@ -153,7 +153,13 @@
     <ResourceCompile Include="kw_oss_team_4.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="game_1.cpp" />
+    <ClCompile Include="game_2.cpp" />
+    <ClCompile Include="game_3.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="game_4.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
