@@ -1,5 +1,6 @@
-/*#include<iostream>
+#include<iostream>
 #include <SFML/Graphics.hpp>
+#include "game.h"
 
 using namespace std;
 using namespace sf;
@@ -76,6 +77,11 @@ int main()
         // 특정 좌표 2일 경우 game_2으로 이동하겠냐는 메시지를 띄운다.
         // 이동(YES)일 경우, game_2로 이동한다.
 
+        if (man.getPosition().x == 0 && man.getPosition().y == 668) { // 지뢰찾기 게임(좌하단)
+            window.close(); // 메인화면 닫고
+            main_game_3(); // 지뢰찾기 실행
+            // 지뢰찾기 종료 후 메인화면 실행
+        }
         // 특정 좌표 3일 경우 game_3으로 이동하겠냐는 메시지를 띄운다.
         // 이동(YES)일 경우, game_3로 이동한다.
 
@@ -83,7 +89,7 @@ int main()
         // 이동(YES)일 경우, game_4로 이동한다.
 
 
-        man.rotate(10); // 테스트를 위한 스프라이트 회전
+        //man.rotate(10); // 테스트를 위한 스프라이트 회전
 
         window.draw(man); // 캐릭터 그리기
 
@@ -96,4 +102,4 @@ int main()
     }
 
     return 0;
-}*/
+}

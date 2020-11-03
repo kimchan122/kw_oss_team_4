@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <cstdlib>
 #include <ctime>
+#include "game.h"
 
 using namespace std;
 using namespace sf;
@@ -186,7 +187,7 @@ void Spread(int x, int y)
 }
 
 
-int main()
+void main_game_3()
 {
     sf::RenderWindow window(sf::VideoMode(1024, 768), "MineSweeper");
     window.setFramerateLimit(60); // 60fps
@@ -227,8 +228,16 @@ int main()
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            if (event.type == sf::Event::KeyPressed) {
+                if (event.KeyPressed == sf::Keyboard::Escape) {
+                    window.close();
+                    main();
+                }
+            }
+            if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code==sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
+                window.close(); // 지뢰찾기 창을 닫고
+                main(); // 메인화면 창을 다시 열기
+            }
             if (event.type == sf::Event::MouseButtonPressed)
             {
                 if (event.mouseButton.button == sf::Mouse::Left) //마우스 좌클릭 이벤트
@@ -345,5 +354,5 @@ int main()
         cout << endl;
     }
     
-    return 0;
+    //return 0;
 }
