@@ -1,8 +1,9 @@
 #include<iostream>
 #include <SFML/Graphics.hpp>
+#include "game.h"
 
 using namespace std;
-
+using namespace sf;
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1024, 768), "SFML works!");
@@ -21,6 +22,8 @@ int main()
 
     double cnt = 0;
     int sw = 0;
+    int mouseX = 0; //마우스 좌클릭 x좌표
+    int mouseY = 0; //마우스 좌클릭 y좌표
 
     man.setPosition(512, 384); // 시작 시 캐릭터 좌표 설정
     while (window.isOpen())
@@ -30,6 +33,17 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+            if (event.type == sf::Event::MouseButtonPressed)
+            {
+                if (event.mouseButton.button == sf::Mouse::Left) //마우스 좌클릭 이벤트
+                {
+                    Vector2i pos = Mouse::getPosition(window);
+                    mouseX = pos.x;
+                    mouseY = pos.y;
+                    cout << mouseX << endl;
+                    cout << mouseY << endl;
+                }
+            }
         }
         window.clear();
 
@@ -63,6 +77,11 @@ int main()
         // 특정 좌표 2일 경우 game_2으로 이동하겠냐는 메시지를 띄운다.
         // 이동(YES)일 경우, game_2로 이동한다.
 
+        if (man.getPosition().x == 0 && man.getPosition().y == 668) { // 지뢰찾기 게임(좌하단)
+            window.close(); // 메인화면 닫고
+            main_game_3(); // 지뢰찾기 실행
+            // 지뢰찾기 종료 후 메인화면 실행
+        }
         // 특정 좌표 3일 경우 game_3으로 이동하겠냐는 메시지를 띄운다.
         // 이동(YES)일 경우, game_3로 이동한다.
 
@@ -70,7 +89,7 @@ int main()
         // 이동(YES)일 경우, game_4로 이동한다.
 
 
-        man.rotate(10); // 테스트를 위한 스프라이트 회전
+        //man.rotate(10); // 테스트를 위한 스프라이트 회전
 
         window.draw(man); // 캐릭터 그리기
 
@@ -78,8 +97,8 @@ int main()
 
         double x = man.getPosition().x; // 좌표 확인을 위한 콘솔창 출력
         double y = man.getPosition().y;
-        cout << x << endl;
-        cout << y << endl << endl;
+        //cout << x << endl;
+        //cout << y << endl << endl;
     }
 
     return 0;

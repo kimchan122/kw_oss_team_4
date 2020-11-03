@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="game.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
