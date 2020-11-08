@@ -82,6 +82,11 @@ int main()
             main_game_3(); // 지뢰찾기 실행
             // 지뢰찾기 종료 후 메인화면 실행
         }
+        else if (man.getPosition().x == 0 && man.getPosition().y == 0) { // 지뢰찾기 게임(좌하단)
+            window.close(); // 메인화면 닫고
+            main_game_1(); // 지뢰찾기 실행
+            // 지뢰찾기 종료 후 메인화면 실행
+        }
         // 특정 좌표 3일 경우 game_3으로 이동하겠냐는 메시지를 띄운다.
         // 이동(YES)일 경우, game_3로 이동한다.
 

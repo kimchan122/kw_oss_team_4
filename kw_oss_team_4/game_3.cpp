@@ -152,7 +152,7 @@ void Spread(int x, int y)
                 {
                     if (tileInfo[i][j].num == 0)
                     {
-                        tTile[i][j].loadFromFile("img/selectedtile.png");
+                        tTile[i][j].loadFromFile("img/game3/selectedtile.png");
                         tileInfo[i][j].isSelected = true;
                         SelectedTileNum++;
                         Spread(i, j);
@@ -162,19 +162,28 @@ void Spread(int x, int y)
                         switch (tileInfo[i][j].num)
                         {
                         case 1:
-                            tTile[i][j].loadFromFile("img/number1tile.png");
+                            tTile[i][j].loadFromFile("img/game3/number1tile.png");
                             break;
                         case 2:
-                            tTile[i][j].loadFromFile("img/number2tile.png");
+                            tTile[i][j].loadFromFile("img/game3/number2tile.png");
                             break;
                         case 3:
-                            tTile[i][j].loadFromFile("img/number3tile.png");
+                            tTile[i][j].loadFromFile("img/game3/number3tile.png");
                             break;
                         case 4:
-                            tTile[i][j].loadFromFile("img/number4tile.png");
+                            tTile[i][j].loadFromFile("img/game3/number4tile.png");
                             break;
                         case 5:
-                            tTile[i][j].loadFromFile("img/number5tile.png");
+                            tTile[i][j].loadFromFile("img/game3/number5tile.png");
+                            break;
+                        case 6:
+                            tTile[i][j].loadFromFile("img/game3/number6tile.png");
+                            break;
+                        case 7:
+                            tTile[i][j].loadFromFile("img/game3/number7tile.png");
+                            break;
+                        case 8:
+                            tTile[i][j].loadFromFile("img/game3/number8tile.png");
                             break;
                         }
                         tileInfo[i][j].isSelected = true;
@@ -193,12 +202,12 @@ void main_game_3()
     window.setFramerateLimit(60); // 60fps
 
     sf::Texture tsmile; // 스마일 마크
-    tsmile.loadFromFile("img/smile.png"); // tman에 이미지 로드
+    tsmile.loadFromFile("img/game3/smile.png"); // tman에 이미지 로드
     sf::Sprite smile; // 객체 man을 생성
     smile.setTexture(tsmile); // 객체 man의 이미지를 tman의 이미지로 지정
 
-    Result[0].loadFromFile("img/win.jpg");
-    Result[1].loadFromFile("img/lose.jpg");
+    Result[0].loadFromFile("img/game3/win.jpg");
+    Result[1].loadFromFile("img/game3/lose.jpg");
     Sprite result[2];
     result[0].setTexture(Result[0]); //win
     result[1].setTexture(Result[1]);
@@ -214,7 +223,7 @@ void main_game_3()
     {
         for (int j = 0; j < 16; j++)
         {
-            tTile[i][j].loadFromFile("img/tile.png"); // 빈 타일 로드
+            tTile[i][j].loadFromFile("img/game3/tile.png"); // 빈 타일 로드
             Tile[i][j].setTexture(tTile[i][j]);
             Tile[i][j].setPosition((float)200 + 40 * i, (float)100 + 40 * j);
         }
@@ -260,19 +269,19 @@ void main_game_3()
                                 switch (tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].num)
                                 {
                                 case 1:
-                                    tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/number1tile.png");
+                                    tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/game3/number1tile.png");
                                     break;
                                 case 2:
-                                    tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/number2tile.png");
+                                    tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/game3/number2tile.png");
                                     break;
                                 case 3:
-                                    tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/number3tile.png");
+                                    tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/game3/number3tile.png");
                                     break;
                                 case 4:
-                                    tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/number4tile.png");
+                                    tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/game3/number4tile.png");
                                     break;
                                 case 5:
-                                    tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/number5tile.png");
+                                    tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/game3/number5tile.png");
                                     break;
                                 }
                                 tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].isSelected = true;
@@ -309,7 +318,7 @@ void main_game_3()
                         {
                             if (!tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].isFlag) //플래그 안세운 타일이면
                             {
-                                tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/flagtile.png");
+                                tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/game3/flagtile.png");
                                 tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].isFlag = true;
                                 FlagNum++;
                                 if (tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].isMine) //플래그 세운 타일이 지뢰 타일이면
@@ -324,7 +333,7 @@ void main_game_3()
                             }
                             else
                             {
-                                tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/tile.png");
+                                tTile[(mouseX - 200) / 40][(mouseY - 100) / 40].loadFromFile("img/game3/tile.png");
                                 tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].isFlag = false;
                                 FlagNum--;
                                 if (tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].isMine == true)
