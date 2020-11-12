@@ -7,20 +7,27 @@
 using namespace std;
 using namespace sf;
 
+struct TILE
+{
+    Sprite spTile;
+    FloatRect TileRect; //타일 경계
+    int HitNum=1; //깨지는 횟수
+};
+
 void main_game_1()
 {
     sf::RenderWindow window(sf::VideoMode(1024, 768), "Arkanoid");
     window.setFramerateLimit(60); // 60fps
 
-    sf::Texture txBack, txPlayer, txTile, txBall; // 
+    sf::Texture txBack, txPlayer, txTile1, txTile2, txBall; // 
     txBack.loadFromFile("img/game1/background.jpg"); // 
     txPlayer.loadFromFile("img/game1/paddle.png"); // 
     txBall.loadFromFile("img/game1/ball.png");
-    txTile.loadFromFile("img/game1/block01.png");
+    txTile1.loadFromFile("img/game1/block01.png");
+    txTile2.loadFromFile("img/game1/block02.png");
 
     sf::Sprite spBack, spPlayer, spBall; // 
-    Sprite spTile[40];
-    FloatRect TileRect[40];
+    TILE Tile[40];
 
     spBack.setTexture(txBack); //
     spPlayer.setTexture(txPlayer);
@@ -32,11 +39,35 @@ void main_game_1()
     float powerY = 5;
     int powerDir = 1; //-1 : left, 0 : 원래방향, 1 : right
 
+    /// <summary>
+    /// set double tile 
+    srand((unsigned int)time(NULL));
+    int rand1[10];
+
+    //무작위 타일에 doouble 
+    for (int i = 0; i < 10; i++)
+    {
+        rand1[i] = rand() % 40;
+        for (int j = 0; j < i; j++)
+        {
+            if (rand1[j] == rand1[i]) //중복 제거
+            {
+                rand1[j] = rand() % 40;
+                i--;
+                break;
+            }
+        }
+        Tile[rand1[i]].HitNum = 2;
+    }/// </summary>
+
     for (int i = 0; i < 40; i++)
     {
-        spTile[i].setTexture(txTile);
-        spTile[i].setPosition((float)250 + (i % 8) * 60, (float)120 + (i / 8) * 30);
-        TileRect[i] = spTile[i].getGlobalBounds(); //타일 경계 지정
+        if (Tile[i].HitNum == 1)
+            Tile[i].spTile.setTexture(txTile1);
+        else
+            Tile[i].spTile.setTexture(txTile2);
+        Tile[i].spTile.setPosition((float)250 + (i % 8) * 60, (float)120 + (i / 8) * 30);
+        Tile[i].TileRect = Tile[i].spTile.getGlobalBounds(); //타일 경계 지정
     }
 
     spPlayer.setPosition(300, 700);
@@ -95,19 +126,39 @@ void main_game_1()
 
         for(int i=0; i<40; i++)
         {
-            if (TileRect[i].contains(spBall.getPosition())) //공과 타일 충돌하면
+            if (Tile[i].TileRect.contains(spBall.getPosition())) //공과 타일 충돌하면
             {
-                spTile[i].setPosition(-100, 0);
-                TileRect[i] = spTile[i].getGlobalBounds();
-                powerY = -powerY;
+                /// <summary>
+                ///  여기 좀 더 손봐야함.
+                /// </summary>
+                if (spBall.getPosition().y - Tile[i].spTile.getPosition().y <= 29 && spBall.getPosition().y - Tile[i].spTile.getPosition().y >= 0) //타일 옆면을 충돌
+                    powerX = -powerX;
+
+                if (Tile[i].HitNum == 1)
+                {
+                    Tile[i].spTile.setPosition(-100, 0);
+                    Tile[i].TileRect = Tile[i].spTile.getGlobalBounds();
+                }
+                else
+                {
+                    Tile[i].HitNum--;
+                    Tile[i].spTile.setTexture(txTile1);
+                }
+
+                
             }
         }
 
         window.draw(spBack); // 배경
         window.draw(spBall);
         for (int i = 0; i < 40; i++)
-            window.draw(spTile[i]); //타일
+            window.draw(Tile[i].spTile); //타일
         window.draw(spPlayer);//플레이어
         window.display(); // 표시
     }
+}
+
+void setDoubleTile()
+{
+    
 }
