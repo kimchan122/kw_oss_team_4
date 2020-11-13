@@ -21,20 +21,20 @@ void main_game_1()
     window.setFramerateLimit(60); // 60fps
 
     sf::Texture txBack, txPlayer, txTile1, txTile2, txBall; // 
-    //sf::SoundBuffer sbTile, sbPlayer; //사운드 버퍼
+    sf::SoundBuffer sbTile, sbPlayer; //사운드 버퍼
 
     txBack.loadFromFile("img/game1/background.jpg"); // 
     txPlayer.loadFromFile("img/game1/paddle.png"); // 
     txBall.loadFromFile("img/game1/ball.png");
     txTile1.loadFromFile("img/game1/block01.png");
     txTile2.loadFromFile("img/game1/block02.png");
-    //sbTile.loadFromFile("sound/game1/tilesound.wav");
-    //sbPlayer.loadFromFile("sound/game1/playersound.wav");
+    sbTile.loadFromFile("sound/game1/tilesound.wav");
+    sbPlayer.loadFromFile("sound/game1/playersound.wav");
 
     sf::Sprite spBack, spPlayer, spBall; // 
-    //Sound soundTile, soundPlayer;
-    //soundTile.setBuffer(sbTile);
-    //soundPlayer.setBuffer(sbPlayer);
+    Sound soundTile, soundPlayer;
+    soundTile.setBuffer(sbTile);
+    soundPlayer.setBuffer(sbPlayer);
 
     TILE Tile[40];
 
@@ -131,7 +131,7 @@ void main_game_1()
                 powerX = -powerX;
             else if (powerDir==-1 && powerX >= 0)
                 powerX = -powerX;
-            //soundPlayer.play();
+            soundPlayer.play();
         }
 
         for(int i=0; i<40; i++)
@@ -155,7 +155,7 @@ void main_game_1()
                     Tile[i].HitNum--;
                     Tile[i].spTile.setTexture(txTile1);
                 }
-                //soundTile.play();
+                soundTile.play();
             }
         }
 
