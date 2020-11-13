@@ -103,11 +103,17 @@ void main_game_1()
             powerX = -powerX;
         if (ballY <= 0 || ballY >= 768)
             powerY = -powerY;
+        if (spPlayer.getPosition().x < 0) { // 유저 왼쪽 밖으로 나가지 않게
+            spPlayer.setPosition(0, spPlayer.getPosition().y);
+        }
+        else if (spPlayer.getPosition().x > 924) { // 오른쪽 밖으로 나가지 않게
+            spPlayer.setPosition(924, spPlayer.getPosition().y);
+        }
         powerDir = 0;
         if (Keyboard::isKeyPressed(Keyboard::Right)) //방향키 우
         {
-            spPlayer.setPosition(spPlayer.getPosition().x + 8, 700);
-            powerDir = 1;
+                spPlayer.setPosition(spPlayer.getPosition().x + 8, 700);
+                powerDir = 1;
         }
         else if (Keyboard::isKeyPressed(Keyboard::Left)) //방향키 좌
         {
