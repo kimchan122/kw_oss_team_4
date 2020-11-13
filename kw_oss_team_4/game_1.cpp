@@ -1,5 +1,6 @@
 #include<iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <cstdlib>
 #include <ctime>
 #include "game.h"
@@ -20,13 +21,21 @@ void main_game_1()
     window.setFramerateLimit(60); // 60fps
 
     sf::Texture txBack, txPlayer, txTile1, txTile2, txBall; // 
+    //sf::SoundBuffer sbTile, sbPlayer; //사운드 버퍼
+
     txBack.loadFromFile("img/game1/background.jpg"); // 
     txPlayer.loadFromFile("img/game1/paddle.png"); // 
     txBall.loadFromFile("img/game1/ball.png");
     txTile1.loadFromFile("img/game1/block01.png");
     txTile2.loadFromFile("img/game1/block02.png");
+    //sbTile.loadFromFile("sound/game1/tilesound.wav");
+    //sbPlayer.loadFromFile("sound/game1/playersound.wav");
 
     sf::Sprite spBack, spPlayer, spBall; // 
+    //Sound soundTile, soundPlayer;
+    //soundTile.setBuffer(sbTile);
+    //soundPlayer.setBuffer(sbPlayer);
+
     TILE Tile[40];
 
     spBack.setTexture(txBack); //
@@ -39,7 +48,6 @@ void main_game_1()
     float powerY = 5;
     int powerDir = 1; //-1 : left, 0 : 원래방향, 1 : right
 
-    /// <summary>
     /// set double tile 
     srand((unsigned int)time(NULL));
     int rand1[10];
@@ -58,7 +66,7 @@ void main_game_1()
             }
         }
         Tile[rand1[i]].HitNum = 2;
-    }/// </summary>
+    }/// set double tile
 
     for (int i = 0; i < 40; i++)
     {
@@ -76,6 +84,7 @@ void main_game_1()
     {
         sf::Event event;
         FloatRect playerRect = spPlayer.getGlobalBounds();
+        FloatRect BallRect = spBall.getGlobalBounds();
 
         while (window.pollEvent(event))
         {
@@ -122,17 +131,19 @@ void main_game_1()
                 powerX = -powerX;
             else if (powerDir==-1 && powerX >= 0)
                 powerX = -powerX;
+            //soundPlayer.play();
         }
 
         for(int i=0; i<40; i++)
         {
             if (Tile[i].TileRect.contains(spBall.getPosition())) //공과 타일 충돌하면
             {
-                /// <summary>
-                ///  여기 좀 더 손봐야함.
-                /// </summary>
-                if (spBall.getPosition().y - Tile[i].spTile.getPosition().y <= 29 && spBall.getPosition().y - Tile[i].spTile.getPosition().y >= 0) //타일 옆면을 충돌
+                if (BallRect.top - Tile[i].TileRect.top < 30 && BallRect.top - Tile[i].TileRect.top > 0) //타일 옆면을 충돌
                     powerX = -powerX;
+                else if (BallRect.top - Tile[i].TileRect.top<=0) //타일 윗면을 충돌
+                    powerY = -powerY;
+                else if (BallRect.top - Tile[i].TileRect.top >= 30) //타일 밑면을 충돌
+                    powerY = -powerY;
 
                 if (Tile[i].HitNum == 1)
                 {
@@ -144,8 +155,7 @@ void main_game_1()
                     Tile[i].HitNum--;
                     Tile[i].spTile.setTexture(txTile1);
                 }
-
-                
+                //soundTile.play();
             }
         }
 
@@ -156,9 +166,4 @@ void main_game_1()
         window.draw(spPlayer);//플레이어
         window.display(); // 표시
     }
-}
-
-void setDoubleTile()
-{
-    
 }
