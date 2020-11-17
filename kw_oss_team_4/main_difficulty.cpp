@@ -78,7 +78,7 @@ void main_difficulty()
             case 418:
 
                 window.close();
-                main_game_2(1);
+                main_game_1(1);
                 //game(1);
                 break;
             case 520:
