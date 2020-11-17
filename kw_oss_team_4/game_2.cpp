@@ -1,6 +1,4 @@
-#include <time.h>
-#include <SFML/Graphics.hpp>
-
+#include"game.h"
 using namespace sf;
 
 struct point
@@ -8,7 +6,7 @@ struct point
     int x, y;
 };
 
-int main()
+void main_game_2()
 {
     srand(time(0));
 
@@ -16,9 +14,9 @@ int main()
     app.setFramerateLimit(60);
 
     Texture t1, t2, t3, t4;
-    t1.loadFromFile("img/background.png");
-    t2.loadFromFile("img/platform.png");
-    t3.loadFromFile("img/doodle.png");
+    t1.loadFromFile("img/game2/background.png");
+    t2.loadFromFile("img/game2/platform.png");
+    t3.loadFromFile("img/game2/doodle.png");
 
     Sprite sBackground(t1), sPlat(t2), sPers(t3);
 
@@ -85,5 +83,5 @@ int main()
         app.display();
     }
 
-    return 0;
+    //return 0;
 }

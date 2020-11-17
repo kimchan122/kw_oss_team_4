@@ -1,8 +1,3 @@
-#include<iostream>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <cstdlib>
-#include <ctime>
 #include "game.h"
 
 using namespace std;
