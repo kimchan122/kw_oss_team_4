@@ -193,7 +193,7 @@ void Spread(int x, int y)
 }
 
 
-void main_game_3()
+void main_game_3(int dif)
 {
     sf::RenderWindow window(sf::VideoMode(1024, 768), "MineSweeper");
     window.setFramerateLimit(60); // 60fps

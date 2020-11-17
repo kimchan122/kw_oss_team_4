@@ -6,7 +6,7 @@ struct point
     int x, y;
 };
 
-void main_game_2()
+void main_game_2(int dif)
 {
     srand(time(0));
 
@@ -38,6 +38,10 @@ void main_game_2()
         {
             if (e.type == Event::Closed)
                 app.close();
+            if (e.type == sf::Event::Closed || (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
+                app.close(); // 게임창 닫고
+                main(); // 메인화면 창을 다시 열기
+            }
         }
 
         if (Keyboard::isKeyPressed(Keyboard::Right) && x < 320) x += 3;

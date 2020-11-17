@@ -10,7 +10,7 @@ struct TILE
     int HitNum=1; //±úÁö´Â È½¼ö
 };
 
-void main_game_1()
+void main_game_1(int dif)
 {
     sf::RenderWindow window(sf::VideoMode(1024, 768), "Arkanoid");
     window.setFramerateLimit(60); // 60fps

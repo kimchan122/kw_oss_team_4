@@ -124,7 +124,7 @@ void setNumber() // 지뢰 주변 타일에 숫자 배정
     }
 }
 
-int main()
+int main_game_4(int dif)
 {
     sf::RenderWindow window(sf::VideoMode(1024, 768), "MineSweeper");
     window.setFramerateLimit(60); // 60fps

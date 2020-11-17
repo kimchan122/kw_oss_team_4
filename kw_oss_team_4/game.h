@@ -6,6 +6,7 @@
 #include <ctime>
 //#include <time.h>
 int main();
-void main_game_1();
-void main_game_2();
-void main_game_3();
+void main_difficulty();
+void main_game_1(int dif);
+void main_game_2(int dif);
+void main_game_3(int dif);
