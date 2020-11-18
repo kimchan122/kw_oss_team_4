@@ -158,6 +158,8 @@
     <ResourceCompile Include="kw_oss_team_4.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="gamecentre.cpp" />
     <ClCompile Include="game_1.cpp" />
     <ClCompile Include="game_2.cpp" />
     <ClCompile Include="game_3.cpp" />

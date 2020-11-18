@@ -1,10 +1,11 @@
 //#include <windows.h>
 #include "game.h"
-
 using namespace std;
 using namespace sf;
-int main()
+int main(int sw)
 {
+    cout << sw << endl;
+    if(sw==1) musicstart();
     sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4");
     window.setFramerateLimit(60); // 60fps
 
@@ -17,10 +18,14 @@ int main()
     tbackground.loadFromFile("img/main/main.png"); // tbg에 배경화면 이미지 로드
     sf::Sprite background; // 객체 bg를 생성
     background.setTexture(tbackground); // 객체 bg의 이미지를 배경화면 이미지인 tbg로 지정
-
+    
+    //sf::SoundBuffer mainbgm;
+    //sf::Sound mainsound;
+    //mainbgm.loadFromFile("sound/main/SellBuyMusic_guitarandbeat.wav");
+    //mainsound.setBuffer(mainbgm);
+    //mainsound.play();
 
     double cnt = 0;
-    int sw = 0;
     int mouseX = 0; //마우스 좌클릭 x좌표
     int mouseY = 0; //마우스 좌클릭 y좌표
 

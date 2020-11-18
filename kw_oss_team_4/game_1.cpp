@@ -10,7 +10,7 @@ struct TILE
     int HitNum=1; //깨지는 횟수
 };
 
-void main_game_1(int dif)
+void main_game_1(int dif) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : hard
 {
     sf::RenderWindow window(sf::VideoMode(1024, 768), "Arkanoid");
     window.setFramerateLimit(60); // 60fps
@@ -43,12 +43,14 @@ void main_game_1(int dif)
     float powerY = 5;
     int powerDir = 1; //-1 : left, 0 : 원래방향, 1 : right
 
+    int cnt = 0;
+
     /// set double tile 
     srand((unsigned int)time(NULL));
-    int rand1[10];
+    int rand1[30];
 
     //무작위 타일에 doouble 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < dif*10; i++) // 난이도 조절을 빨간 타일의 개수를 통해 결정합니다
     {
         rand1[i] = rand() % 40;
         for (int j = 0; j < i; j++)
@@ -86,17 +88,27 @@ void main_game_1(int dif)
             if (event.type == sf::Event::KeyPressed) {
                 if (event.KeyPressed == sf::Keyboard::Escape) {
                     window.close();
-                    main();
+                    main(1);
                 }
             }
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 window.close(); // 게임창 닫고
-                main(); // 메인화면 창을 다시 열기
+                main(1); // 메인화면 창을 다시 열기
             }
         }
+
+        // // // added
+        if (ballY >=768) { // 밑으로 내려가는 경우 실패!
+            // 실패 메시지 출력
+            window.close();
+            main(1); // 메인 또는 다음 게임으로 진행
+            
+        }
+        // // // added
+        
         if (ballX <= 0 || ballX >= 1024) //공이 프레임 밖으로 나가지 않게
             powerX = -powerX;
-        if (ballY <= 0 || ballY >= 768)
+        if (ballY <= 0)
             powerY = -powerY;
         if (spPlayer.getPosition().x < 0) { // 유저 왼쪽 밖으로 나가지 않게
             spPlayer.setPosition(0, spPlayer.getPosition().y);
@@ -124,9 +136,9 @@ void main_game_1(int dif)
         if (playerRect.contains(spBall.getPosition())) //공과 플레이어 충돌하면
         {
             powerY = -powerY;
-            float temp = spBall.getPosition().x - spPlayer.getPosition().x;
-            powerX += temp / 100;
-            powerY += temp / 100;
+            //float temp = spBall.getPosition().x - spPlayer.getPosition().x;
+            //powerX += temp / 100;
+            //powerY += temp / 100;
 
             if (powerDir==1 && powerX <= 0)
                 powerX = -powerX;
@@ -149,6 +161,7 @@ void main_game_1(int dif)
                 if (Tile[i].HitNum == 1)
                 {
                     Tile[i].spTile.setPosition(-100, 0);
+                    cout << ++cnt << endl;
                     Tile[i].TileRect = Tile[i].spTile.getGlobalBounds();
                 }
                 else
@@ -166,5 +179,8 @@ void main_game_1(int dif)
             window.draw(Tile[i].spTile); //타일
         window.draw(spPlayer);//플레이어
         window.display(); // 표시
+        if (cnt == 40) {
+            //게임 성공! 
+        }
     }
 }

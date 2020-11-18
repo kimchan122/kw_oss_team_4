@@ -40,7 +40,7 @@ void main_game_2(int dif)
                 app.close();
             if (e.type == sf::Event::Closed || (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 app.close(); // 게임창 닫고
-                main(); // 메인화면 창을 다시 열기
+                main(1); // 메인화면 창을 다시 열기
             }
         }
 

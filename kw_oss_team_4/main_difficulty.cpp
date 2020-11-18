@@ -31,7 +31,7 @@ void main_difficulty()
         {
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 window.close(); // 게임창 닫고
-                main(); // 메인화면 창을 다시 열기
+                main(0); // 메인화면 창을 다시 열기
             }
             if (event.type == sf::Event::MouseButtonPressed)
             {
@@ -76,18 +76,23 @@ void main_difficulty()
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
             switch ((int)man.getPosition().y) {
             case 418:
-
+                musicstop();
                 window.close();
-                main_game_1(1);
+                game_centre(1);
+                //main_game_1(1);
                 //game(1);
                 break;
             case 520:
-                //window.close();
+                musicstop();
+                window.close();
+                game_centre(2);
                 // 만든 이 실행
                 //game(2);
                 break;
             case 622:
-                //window.close();
+                musicstop();
+                window.close();
+                game_centre(3);
                 //game(3);
                 break;
             }
