@@ -5,10 +5,11 @@
 #include <cstdlib>
 #include <ctime>
 #include<deque>
-//#include <time.h>
 
 int main(int sw);
 void main_difficulty();
+void selectmode(int dif);
+
 void musicstart();
 void musicstop();
 

@@ -17,7 +17,6 @@ void main_difficulty()
     sf::Sprite background; // 객체 bg를 생성
     background.setTexture(tbackground); // 객체 bg의 이미지를 배경화면 이미지인 tbg로 지정
 
-
     double cnt = 0;
     int sw = 0;
     int mouseX = 0; //마우스 좌클릭 x좌표
@@ -76,9 +75,9 @@ void main_difficulty()
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
             switch ((int)man.getPosition().y) {
             case 418:
-                musicstop();
-                window.close();
-                game_centre(1);
+                //window.close();
+                selectmode(1);
+                //game_centre(1);
                 //main_game_1(1);
                 //game(1);
                 break;
@@ -116,28 +115,5 @@ void main_difficulty()
         cout << x << endl;
         cout << y << endl << endl;
     }
-        // 특정 좌표 1일 경우 game_1으로 이동하겠냐는 메시지를 띄운다.
-        // 이동(YES)일 경우, game_1로 이동한다.
-
-        // 특정 좌표 2일 경우 game_2으로 이동하겠냐는 메시지를 띄운다.
-        // 이동(YES)일 경우, game_2로 이동한다.
-        /*
-        if (man.getPosition().x == 0 && man.getPosition().y == 668) { // 지뢰찾기 게임(좌하단)
-            window.close(); // 메인화면 닫고
-            main_game_3(); // 지뢰찾기 실행
-            // 지뢰찾기 종료 후 메인화면 실행
-        }
-        else if (man.getPosition().x == 0 && man.getPosition().y == 0) { // arkanoid게임 (좌상단)
-            window.close(); // 메인화면 닫고
-            main_game_1(); // 지뢰찾기 실행
-            // 지뢰찾기 종료 후 메인화면 실행
-        }
-        */
-        // 특정 좌표 3일 경우 game_3으로 이동하겠냐는 메시지를 띄운다.
-        // 이동(YES)일 경우, game_3로 이동한다.
-
-        // 특정 좌표 4일 경우 game_4으로 이동하겠냐는 메시지를 띄운다.
-        // 이동(YES)일 경우, game_4로 이동한다.
-
     //return 0;
 }

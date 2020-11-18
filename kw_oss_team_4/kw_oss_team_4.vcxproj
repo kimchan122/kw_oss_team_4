@@ -166,6 +166,7 @@
     <ClCompile Include="game_5.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_difficulty.cpp" />
+    <ClCompile Include="selectmode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="game_4.cpp" />
