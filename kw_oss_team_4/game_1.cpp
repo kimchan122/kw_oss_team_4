@@ -101,7 +101,8 @@ void main_game_1(int dif) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : ha
         if (ballY >=768) { // 밑으로 내려가는 경우 실패!
             // 실패 메시지 출력
             window.close();
-            main(1); // 메인 또는 다음 게임으로 진행
+            break;
+            //main(1); // 메인 또는 다음 게임으로 진행
             
         }
         // // // added
@@ -180,7 +181,9 @@ void main_game_1(int dif) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : ha
         window.draw(spPlayer);//플레이어
         window.display(); // 표시
         if (cnt == 40) {
+            window.close();
             //게임 성공! 
+            break;
         }
     }
 }

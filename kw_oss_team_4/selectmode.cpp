@@ -59,6 +59,9 @@ void selectmode(int dif) {
                     //game_centre(dif);
                     break;
                 case 105: // 도전하기. 게임 하나씩 플레이 후, 랭크 점수 결과를 출력하게 된다.
+                    musicstop();
+                    window.close();
+                    game_centre(dif);
                     //window.close();
                     // 만든 이 실행
                     break;

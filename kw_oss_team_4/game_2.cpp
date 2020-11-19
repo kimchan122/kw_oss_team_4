@@ -72,6 +72,8 @@ void main_game_2(int dif)
             if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::Left)) {
                 break;
             }
+            app.close();
+            break;
         }
 
         sPers.setPosition(x, y);
