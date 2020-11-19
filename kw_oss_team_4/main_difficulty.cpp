@@ -75,9 +75,11 @@ void main_difficulty()
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
             switch ((int)man.getPosition().y) {
             case 418:
+                musicstop();
+                window.close();
                 //window.close();
-                selectmode(1);
-                //game_centre(1);
+                //selectmode(1);
+                game_centre(1);
                 //main_game_1(1);
                 //game(1);
                 break;

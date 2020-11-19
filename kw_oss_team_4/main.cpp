@@ -57,15 +57,15 @@ int main(int sw)
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
             switch ((int)man.getPosition().y) {
-            case 418:
+            case 418: //게임시작
                 window.close();
                 main_difficulty();
                 break;
-            case 520:
+            case 520: //만든이
                 //window.close();
                 // 만든 이 실행
                 break;
-            case 622:
+            case 622: //나가기
                 window.close();
                 break;
             }
