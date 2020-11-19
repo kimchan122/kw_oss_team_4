@@ -300,6 +300,7 @@ void main_game_3(int dif)
                                 window.draw(result[1]);
                                 window.display();
                                 //window.close();
+                                //next game;
                             }
                             else if (tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].num >= 1)
                             {
@@ -327,6 +328,7 @@ void main_game_3(int dif)
                                 {
                                     window.draw(result[0]);
                                     window.display();
+                                    //next game
                                 }
                             }
                             else if (tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].num == 0) //누른 타일 주변 8칸에 지뢰가 없음
