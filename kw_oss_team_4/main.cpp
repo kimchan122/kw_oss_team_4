@@ -4,7 +4,9 @@ using namespace sf;
 int main(int sw)
 {
     cout << sw << endl;
-    if(sw==1) musicstart();
+    if (sw == 1) {
+        musicstart();
+    }
     sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4");
     window.setFramerateLimit(60); // 60fps
 
@@ -28,7 +30,7 @@ int main(int sw)
     int mouseX = 0; //마우스 좌클릭 x좌표
     int mouseY = 0; //마우스 좌클릭 y좌표
 
-    man.setPosition(358, 320); // 시작 시 캐릭터 좌표 설정
+    man.setPosition(358, 418); // 시작 시 캐릭터 좌표 설정
     while (window.isOpen())
     {
         sf::Event event;
@@ -67,11 +69,12 @@ int main(int sw)
                 break;
             case 622:
                 window.close();
+                return 0;
                 break;
             }
         }
 
-        man.setPosition(man.getPosition() + speed); // 캐릭터 좌표 설정
+        man.setPosition(man.getPosition()+speed); // 캐릭터 좌표 설정
         window.draw(background); // 배경화면 그리기
 
         if (man.getPosition().y < 418) { // 위로 나가지 않게

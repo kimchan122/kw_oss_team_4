@@ -22,7 +22,8 @@ void main_difficulty()
     int mouseX = 0; //마우스 좌클릭 x좌표
     int mouseY = 0; //마우스 좌클릭 y좌표
 
-    man.setPosition(358, 384); // 시작 시 캐릭터 좌표 설정
+    man.setPosition(358, 418); // 시작 시 캐릭터 좌표 설정
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -45,66 +46,45 @@ void main_difficulty()
             }
         }
         window.clear();
-
         sf::Vector2f speed = { 0,0 }; // 속도 초기화
 
-        //if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) { speed.x = 8.0f; } // D
-        //else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) { speed.x = -8.0f; } // A
-
-        //if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) { speed.y = 8.0f; } // S
-        //else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { speed.y = -8.0f; } // W
-
-        man.setPosition(man.getPosition() + speed); // 캐릭터 좌표 설정
-        window.draw(background); // 배경화면 그리기
-
-        if (man.getPosition().x < 0) { // 왼쪽 밖으로 나가지 않게
-            man.setPosition(0, man.getPosition().y);
-        }
-        else if (man.getPosition().x > 924) { // 오른쪽 밖으로 나가지 않게
-            man.setPosition(924, man.getPosition().y);
-        }
-        if (man.getPosition().y < 0) { // 위로 나가지 않게
-            man.setPosition(man.getPosition().x, 0);
-        }
-        else if (man.getPosition().y > 668) { // 아래로 나가지 않게
-            man.setPosition(man.getPosition().x, 668);
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) { sf::sleep(sf::seconds(0.1f)); speed.y = 102.0f; } // 아래
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) { sf::sleep(sf::seconds(0.1f)); speed.y = -102.0f; } // 위
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-            switch ((int)man.getPosition().y) {
-            case 418:
-                //window.close();
-                selectmode(1);
-                //game_centre(1);
-                //main_game_1(1);
-                //game(1);
-                break;
-            case 520:
-                musicstop();
-                window.close();
-                game_centre(2);
-                // 만든 이 실행
-                //game(2);
-                break;
-            case 622:
-                musicstop();
-                window.close();
-                game_centre(3);
-                //game(3);
-                break;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) { sf::sleep(sf::seconds(0.2f)); speed.y = 102.0f; } // 아래
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) { sf::sleep(sf::seconds(0.2f)); speed.y = -102.0f; } // 위
+        if(window.isOpen()) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+                switch ((int)man.getPosition().y) {
+                case 419:
+                    window.close();
+                    selectmode(1);
+                    //game_centre(1);
+                    //main_game_1(1);
+                    //game(1);
+                    break;
+                case 521:
+                    //musicstop();
+                    window.close();
+                    selectmode(2);
+                    //game_centre(2);
+                    //game(2);
+                    break;
+                case 623:
+                    //musicstop();
+                    window.close();
+                    selectmode(3);
+                    //game_centre(3);
+                    //game(3);
+                    break;
+                }
             }
         }
-
         man.setPosition(man.getPosition() + speed); // 캐릭터 좌표 설정
         window.draw(background); // 배경화면 그리기
 
-        if (man.getPosition().y < 418) { // 위로 나가지 않게
-            man.setPosition(man.getPosition().x, 418);
+        if (man.getPosition().y < 419) { // 위로 나가지 않게
+            man.setPosition(man.getPosition().x, 419);
         }
-        else if (man.getPosition().y > 622) { // 아래로 나가지 않게
-            man.setPosition(man.getPosition().x, 622);
+        else if (man.getPosition().y > 623) { // 아래로 나가지 않게
+            man.setPosition(man.getPosition().x, 623);
         }
         window.draw(man); // 캐릭터 그리기
 

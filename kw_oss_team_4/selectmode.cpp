@@ -28,6 +28,7 @@ void selectmode(int dif) {
         {
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 window.close(); // 게임창 닫고
+                main_difficulty();
                 //main(0); // 메인화면 창을 다시 열기
             }
             if (event.type == sf::Event::MouseButtonPressed)
@@ -46,20 +47,22 @@ void selectmode(int dif) {
 
         sf::Vector2f speed = { 0,0 }; // 속도 초기화
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) { sf::sleep(sf::seconds(0.1f)); speed.y = 60.0f; } // 아래 방향키
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) { sf::sleep(sf::seconds(0.1f)); speed.y = -60.0f; } // 위 방향키
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-            switch ((int)man.getPosition().y) {
-            case 45: // 연습하기. 연습맵으로 이동 후, 원하는 게임을 선택한다.
-                musicstop();
-                window.close();
-                game_centre(dif);
-                break;
-            case 105: // 도전하기. 게임 하나씩 플레이 후, 랭크 점수 결과를 출력하게 된다.
-                //window.close();
-                // 만든 이 실행
-                break;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) { sf::sleep(sf::seconds(0.2f)); speed.y = 60.0f; } // 아래 방향키
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) { sf::sleep(sf::seconds(0.2f)); speed.y = -60.0f; } // 위 방향키
+        if (window.isOpen()) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+                switch ((int)man.getPosition().y) {
+                case 45: // 연습하기. 연습맵으로 이동 후, 원하는 게임을 선택한다.
+                    musicstop();
+                    window.close();
+                    practice(dif);
+                    //game_centre(dif);
+                    break;
+                case 105: // 도전하기. 게임 하나씩 플레이 후, 랭크 점수 결과를 출력하게 된다.
+                    //window.close();
+                    // 만든 이 실행
+                    break;
+                }
             }
         }
 

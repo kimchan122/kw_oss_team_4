@@ -10,8 +10,12 @@ int main(int sw);
 void main_difficulty();
 void selectmode(int dif);
 
+void practice(int dif);
+
 void musicstart();
 void musicstop();
+void pmusicstart();
+void pmusicstop();
 
 void game_centre(int dif);
 
