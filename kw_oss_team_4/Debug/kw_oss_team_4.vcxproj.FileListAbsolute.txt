@@ -2,3 +2,5 @@ C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug
 C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.pdb
 C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.exe
 C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.pdb
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.exe
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.pdb

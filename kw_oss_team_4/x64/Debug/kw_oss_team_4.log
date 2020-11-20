@@ -1,0 +1,1 @@
+﻿sfml-graphics-d.lib(sfml-graphics-d-2.dll) : fatal error LNK1112: 'x86' 모듈 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
