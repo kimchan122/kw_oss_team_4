@@ -40,7 +40,7 @@ void failsound() {
     failed.setBuffer(failedbgm);
     failed.play();
 }
-void manclicksound() {
+void manclick() {
     tmclick.loadFromFile("sound/main/manclick.wav");
     mclick.setBuffer(tmclick);
     mclick.play();

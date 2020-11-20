@@ -36,7 +36,7 @@ sf::Text playerText;
 sf::Text comText;
 
 sf::Vector2f mouseposition;
-bool mousecontrol(sf::Vector2f pointerPosition, short usrID);
+bool mousecontrol(sf::RenderWindow* window, sf::Vector2f pointerPosition, short usrID);
 void elReset(short stateMatrix[3][3]);
 bool endControl(short stateMatrix[3][3], short userID);
 bool drwaControl();
@@ -52,7 +52,6 @@ sf::Text oCiz(float x, float y);
 
 void main_game_7(int dif, int pr)
 {
-	
 	sf::RenderWindow window(sf::VideoMode(mapWidth, mapHeight + 50), "Tic-Tac-Toe", sf::Style::Close);//sf::Style::Fullscreen
 	window.setFramerateLimit(30);
 	font = fonttictactoe("neuropol.ttf");
@@ -65,6 +64,15 @@ void main_game_7(int dif, int pr)
 
 		if (gameover) {
 			//점수 리셋 
+			for (int i = 0; i < 3; i++) {
+				for (int j = 0; j < 3; j++) {
+					a[i][j] = 0;
+				}
+			}
+			playerScore = 0;
+			comScore = 0;
+			roundNumber = 0;
+			gameover = false;
 		}
 		window.clear(sf::Color(0, 0, 0));
 		gamewindow(&window);
@@ -83,7 +91,7 @@ void main_game_7(int dif, int pr)
 			}
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 				mouseposition = sf::Vector2f(event.touch.x, event.touch.y);
-				if (mousecontrol(mouseposition, userID)) {
+				if (mousecontrol(&window, mouseposition, userID)) {
 					cout << userID << endl;
 					if (userID == 1) {
 						if (endControl(a, userID)) { // 이겼을때 체크 
@@ -94,6 +102,7 @@ void main_game_7(int dif, int pr)
 							}
 							else { // 5번이기면 종료
 								//승리의 사운드 추가?
+								gameover = true;
 								window.close();
 								if (pr == 1) {
 									practice(dif);
@@ -114,6 +123,7 @@ void main_game_7(int dif, int pr)
 									roundNumber++;
 								}
 								else {
+									gameover = true;
 									failsound();
 									sf::sleep(sf::seconds(1.5f));
 									window.close();
@@ -131,6 +141,7 @@ void main_game_7(int dif, int pr)
 						}
 					}
 				}
+				cpuclicksound();
 			}
 		}
 
@@ -280,12 +291,16 @@ void secondturn() {
 		if ((a[m][n] != usrID - 1) && (a[m][n] != usrID)) { a[m][n] = usrID; break; } // 인공지능 첫돌
 	}
 }
-bool mousecontrol(sf::Vector2f pointerPosition, short usrID) { // 입력단 
+bool mousecontrol(sf::RenderWindow* window, sf::Vector2f pointerPosition, short usrID) { // 입력단 
 
 	if (userID == 1) {
+		manclick();
 		if ((pointerPosition.x < 200 and pointerPosition.x > 0) and (pointerPosition.y <= 250 and pointerPosition.y > 50)) {//x=0, y=0.cell
 			if (a[0][0] == 0) {
 				a[0][0] = usrID;
+				window->draw(xCiz(maptrix[0][0][0], maptrix[0][0][1]));
+				window->display();
+				sf::sleep(sf::seconds(1.5f));
 				secondturn();
 				return true;
 			}
@@ -293,6 +308,9 @@ bool mousecontrol(sf::Vector2f pointerPosition, short usrID) { // 입력단
 		else if ((pointerPosition.x < 400 and pointerPosition.x > 200) and (pointerPosition.y <= 250 and pointerPosition.y > 50)) {
 			if (a[0][1] == 0) {
 				a[0][1] = usrID;
+				window->draw(xCiz(maptrix[0][1][0], maptrix[0][1][1]));
+				window->display();
+				sf::sleep(sf::seconds(1.5f));
 				secondturn();
 				return true;
 			}
@@ -300,6 +318,9 @@ bool mousecontrol(sf::Vector2f pointerPosition, short usrID) { // 입력단
 		else if ((pointerPosition.x < 600 and pointerPosition.x > 400) and (pointerPosition.y <= 250 and pointerPosition.y > 50)) {
 			if (a[0][2] == 0) {
 				a[0][2] = usrID;
+				window->draw(xCiz(maptrix[0][2][0], maptrix[0][2][1]));
+				window->display();
+				sf::sleep(sf::seconds(1.5f));
 				secondturn();
 				return true;
 			}
@@ -307,6 +328,9 @@ bool mousecontrol(sf::Vector2f pointerPosition, short usrID) { // 입력단
 		else if ((pointerPosition.x < 200 and pointerPosition.x > 0) and (pointerPosition.y <= 450 and pointerPosition.y > 250)) {
 			if (a[1][0] == 0) {
 				a[1][0] = usrID;
+				window->draw(xCiz(maptrix[1][0][0], maptrix[1][0][1]));
+				window->display();
+				sf::sleep(sf::seconds(1.5f));
 				secondturn();
 				return true;
 			}
@@ -314,6 +338,9 @@ bool mousecontrol(sf::Vector2f pointerPosition, short usrID) { // 입력단
 		else if ((pointerPosition.x < 400 and pointerPosition.x > 200) and (pointerPosition.y <= 450 and pointerPosition.y > 250)) {
 			if (a[1][1] == 0) {
 				a[1][1] = usrID;
+				window->draw(xCiz(maptrix[1][1][0], maptrix[1][1][1]));
+				window->display();
+				sf::sleep(sf::seconds(1.5f));
 				secondturn();
 				return true;
 			}
@@ -321,6 +348,9 @@ bool mousecontrol(sf::Vector2f pointerPosition, short usrID) { // 입력단
 		else if ((pointerPosition.x < 600 and pointerPosition.x > 400) and (pointerPosition.y <= 450 and pointerPosition.y > 250)) {
 			if (a[1][2] == 0) {
 				a[1][2] = usrID;
+				window->draw(xCiz(maptrix[1][2][0], maptrix[1][2][1]));
+				window->display();
+				sf::sleep(sf::seconds(1.5f));
 				secondturn();
 				return true;
 			}
@@ -328,6 +358,9 @@ bool mousecontrol(sf::Vector2f pointerPosition, short usrID) { // 입력단
 		else if ((pointerPosition.x < 200 and pointerPosition.x > 0) and (pointerPosition.y <= 650 and pointerPosition.y > 450)) {
 			if (a[2][0] == 0) {
 				a[2][0] = usrID;
+				window->draw(xCiz(maptrix[2][0][0], maptrix[2][0][1]));
+				window->display();
+				sf::sleep(sf::seconds(1.5f));
 				secondturn();
 				return true;
 			}
@@ -335,6 +368,9 @@ bool mousecontrol(sf::Vector2f pointerPosition, short usrID) { // 입력단
 		else if ((pointerPosition.x < 400 and pointerPosition.x > 200) and (pointerPosition.y <= 650 and pointerPosition.y > 450)) {
 			if (a[2][1] == 0) {
 				a[2][1] = usrID;
+				window->draw(xCiz(maptrix[2][1][0], maptrix[2][1][1]));
+				window->display();
+				sf::sleep(sf::seconds(1.5f));
 				secondturn();
 				return true;
 			}
@@ -342,6 +378,9 @@ bool mousecontrol(sf::Vector2f pointerPosition, short usrID) { // 입력단
 		else if ((pointerPosition.x < 600 and pointerPosition.x > 400) and (pointerPosition.y <= 650 and pointerPosition.y > 450)) {
 			if (a[2][2] == 0) {
 				a[2][2] = usrID;
+				window->draw(xCiz(maptrix[2][2][0], maptrix[2][2][1]));
+				window->display();
+				sf::sleep(sf::seconds(1.5f));
 				secondturn();
 				return true;
 			}
