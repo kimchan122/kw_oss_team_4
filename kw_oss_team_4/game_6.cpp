@@ -9,10 +9,13 @@ void main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal
     sf::RenderWindow window(sf::VideoMode(1024, 768), "dodge");
     window.setFramerateLimit(60); // 60fps
 
-    Texture txBackground;
-    txBackground.loadFromFile("img/man.png");
-    Sprite spBackground;
+    Texture txBackground, txPlayer;
+    txBackground.loadFromFile("img/game6/background.png");
+    txPlayer.loadFromFile("img/game6/player.png");
+
+    Sprite spBackground,spPlayer;
     spBackground.setTexture(txBackground);
+    spPlayer.setTexture(txPlayer);
     while (window.isOpen())
     {
         sf::Event event;
@@ -47,6 +50,7 @@ void main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal
         }
 
         window.draw(spBackground);
+        window.draw(spPlayer);
         window.display(); // 표시
 
         
