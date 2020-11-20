@@ -1,6 +1,6 @@
 #include"game.h"
 using namespace sf;
-
+using namespace std;
 struct point
 {
     int x, y;
@@ -68,13 +68,19 @@ void main_game_2(int dif, int pr)
 
         for (int i = 0; i < 10;     i++)
             if ((x + 50 > plat[i].x) && (x + 20 < plat[i].x + 68)
-                && (y + 70 > plat[i].y) && (y + 70 < plat[i].y + 14) && (dy > 0))  dy = -10;
+                && (y + 70 > plat[i].y) && (y + 70 < plat[i].y + 14) && (dy > 0)) {
+                dy = -10;
+                //cout << "밟음" << endl;
+                //20 밟은 후에 게임 종료.
+            }
 
 
         // 게임 오버
         if (y > 500) {
             if (pr == 1) {
                 // 실패 메시지(이미지) 출력
+                failsound();
+                sf::sleep(sf::seconds(1.5f));
                 app.close();
                 practice(dif);
                 break;

@@ -304,10 +304,15 @@ void main_game_3(int dif, int pr)
                             {
                                 window.draw(result[1]);
                                 window.display();
-                                sf::sleep(sf::seconds(5.0f));
+                                failsound();
+                                sf::sleep(sf::seconds(3.0f));
                                 window.close();
-                                practice(dif);
-                                break;
+                                if (pr == 1) {
+                                    practice(dif);
+                                }
+                                else {
+                                    break;
+                                }
                                 //next game;
                             }
                             else if (tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].num >= 1)
@@ -336,6 +341,15 @@ void main_game_3(int dif, int pr)
                                 {
                                     window.draw(result[0]);
                                     window.display();
+                                    sf::sleep(sf::seconds(3.0f));
+                                    window.close();
+                                    if (pr == 1) {
+                                        practice(dif);
+                                    }
+                                    else {
+                                        break;
+                                    }
+                                    break;
                                     //next game
                                 }
                             }
@@ -375,6 +389,15 @@ void main_game_3(int dif, int pr)
                                     {
                                         window.draw(result[0]);
                                         window.display();
+                                        sf::sleep(sf::seconds(5.0f));
+                                        window.close();
+                                        if (pr == 1) {
+                                            practice(dif);
+                                        }
+                                        else {
+                                            break;
+                                        }
+                                        break;
                                     }
                                 }
                             }
