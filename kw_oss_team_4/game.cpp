@@ -7,6 +7,8 @@ sf::SoundBuffer mainbgm;
 sf::Sound mainsound;
 sf::SoundBuffer practicebgm;
 sf::Sound psound;
+sf::SoundBuffer failedbgm;
+sf::Sound failed;
 
 void musicstart() {
     mainbgm.loadFromFile("sound/main/SellBuyMusic_guitarandbeat.wav");
@@ -26,4 +28,12 @@ void pmusicstart() {
 }
 void pmusicstop() {
     psound.stop();
+}
+void failsound() {
+    //CC0 1.0 Universal
+    //Short jingles by Kenney Vleugels(www.kenney.nl)
+    failedbgm.loadFromFile("sound/main/jingles.wav");
+    failed.setBuffer(failedbgm);
+    //psound.setLoop(true);
+    failed.play();
 }

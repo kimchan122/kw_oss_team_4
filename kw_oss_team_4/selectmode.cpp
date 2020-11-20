@@ -3,7 +3,7 @@ using namespace std;
 using namespace sf;
 
 void selectmode(int dif) {
-    sf::RenderWindow window(sf::VideoMode(400, 200), "OSS_Team_4");
+    sf::RenderWindow window(sf::VideoMode(400, 200), "OSS_Team_4_select_mode");
     window.setFramerateLimit(60); // 60fps
 
     sf::Texture tman; // 텍스쳐를 담을 tman 생성
