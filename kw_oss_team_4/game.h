@@ -23,3 +23,4 @@ void main_game_1(int dif, int pr);
 void main_game_2(int dif, int pr);
 void main_game_3(int dif, int pr);
 void main_game_5(int dif, int pr);
+void main_game_6(int dif, int pr);

@@ -71,15 +71,20 @@ void practice(int dif) {
                 window.close();
                 main_game_1(dif,1);
             }
-            if (man.getPosition().x >= 0 && man.getPosition().x <= 96 && man.getPosition().y >= 200 && man.getPosition().y <= 272) { // game1
+            if (man.getPosition().x >= 0 && man.getPosition().x <= 96 && man.getPosition().y >= 200 && man.getPosition().y <= 272) { // game2
                 pmusicstop();
                 window.close();
                 main_game_2(dif, 1);
             }
-            if (man.getPosition().x >= 0 && man.getPosition().x <= 96 && man.getPosition().y >= 400 && man.getPosition().y <= 472) { // game1
+            if (man.getPosition().x >= 0 && man.getPosition().x <= 96 && man.getPosition().y >= 400 && man.getPosition().y <= 472) { // game3
                 pmusicstop();
                 window.close();
                 main_game_3(dif, 1);
+            }
+            if (man.getPosition().x >= 0 && man.getPosition().x <= 96 && man.getPosition().y >= 600 && man.getPosition().y <= 672) {
+                pmusicstop();
+                window.close();
+                main_game_6(dif, 1);
             }
 
         }
