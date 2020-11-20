@@ -165,6 +165,7 @@
     <ClCompile Include="game_3.cpp" />
     <ClCompile Include="game_5.cpp" />
     <ClCompile Include="game_6.cpp" />
+    <ClCompile Include="game_7.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_difficulty.cpp" />
     <ClCompile Include="practice.cpp" />
