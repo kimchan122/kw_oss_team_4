@@ -9,6 +9,10 @@ sf::SoundBuffer practicebgm;
 sf::Sound psound;
 sf::SoundBuffer failedbgm;
 sf::Sound failed;
+sf::SoundBuffer tmclick;
+sf::Sound mclick;
+sf::SoundBuffer tcpuclick;
+sf::Sound cpuclick;
 
 void musicstart() {
     mainbgm.loadFromFile("sound/main/SellBuyMusic_guitarandbeat.wav");
@@ -34,6 +38,15 @@ void failsound() {
     //Short jingles by Kenney Vleugels(www.kenney.nl)
     failedbgm.loadFromFile("sound/main/jingles.wav");
     failed.setBuffer(failedbgm);
-    //psound.setLoop(true);
     failed.play();
+}
+void manclicksound() {
+    tmclick.loadFromFile("sound/main/manclick.wav");
+    mclick.setBuffer(tmclick);
+    mclick.play();
+}
+void cpuclicksound() {
+    tcpuclick.loadFromFile("sound/main/cpuclick.wav");
+    cpuclick.setBuffer(tcpuclick);
+    cpuclick.play();
 }

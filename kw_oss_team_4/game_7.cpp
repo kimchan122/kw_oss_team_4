@@ -71,11 +71,15 @@ void main_game_7(int dif, int pr)
 		// 인풋 컨트롤 
 		while (window.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed) {
+			if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
 				window.close();
-			}
-			if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape)) {
-				window.close();
+				if (pr == 1) {
+					practice(dif);
+				}
+				else {
+					//main(1); // 메인화면 창을 다시 열기
+					main_difficulty();
+				}
 			}
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 				mouseposition = sf::Vector2f(event.touch.x, event.touch.y);
@@ -89,8 +93,12 @@ void main_game_7(int dif, int pr)
 								roundNumber++;
 							}
 							else { // 5번이기면 종료
+								//승리의 사운드 추가?
 								window.close();
-								main(1);
+								if (pr == 1) {
+									practice(dif);
+								}
+								break;
 							}
 						}
 						else if (drwaControl()) { // 빈칸 없으면 false 
@@ -106,8 +114,13 @@ void main_game_7(int dif, int pr)
 									roundNumber++;
 								}
 								else {
+									failsound();
+									sf::sleep(sf::seconds(1.5f));
 									window.close();
-									main(1);
+									if (pr == 1) {
+										practice(dif);
+									}
+									break;
 								}
 							}
 							else if (drwaControl()) {

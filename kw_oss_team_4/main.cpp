@@ -19,12 +19,6 @@ int main(int sw)
     tbackground.loadFromFile("img/main/main.png"); // tbg에 배경화면 이미지 로드
     sf::Sprite background; // 객체 bg를 생성
     background.setTexture(tbackground); // 객체 bg의 이미지를 배경화면 이미지인 tbg로 지정
-    
-    //sf::SoundBuffer mainbgm;
-    //sf::Sound mainsound;
-    //mainbgm.loadFromFile("sound/main/SellBuyMusic_guitarandbeat.wav");
-    //mainsound.setBuffer(mainbgm);
-    //mainsound.play();
 
     double cnt = 0;
     int mouseX = 0; //마우스 좌클릭 x좌표

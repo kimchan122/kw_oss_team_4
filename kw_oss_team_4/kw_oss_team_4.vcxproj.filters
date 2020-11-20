@@ -64,6 +64,9 @@
     <ClCompile Include="game_7.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="main_story.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="game_4.cpp">

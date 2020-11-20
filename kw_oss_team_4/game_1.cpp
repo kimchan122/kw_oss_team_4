@@ -85,12 +85,6 @@ void main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal
 
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.KeyPressed == sf::Keyboard::Escape) {
-                    window.close();
-                    main(1);
-                }
-            }
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 window.close();
                 if (pr == 1) {

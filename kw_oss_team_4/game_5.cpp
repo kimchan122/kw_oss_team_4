@@ -161,7 +161,6 @@ private:
         WRONG,
     };
     int arrowSpeed;
-    bool isGameOver;
     Arrow* pArrow;
 
     Texture tw;
@@ -172,6 +171,7 @@ private:
     GameState state;
     ArrowShape firstArrowPos;
 public:
+    bool isGameOver;
     GameManager()
     {
         arrowSpeed = 10;
@@ -291,8 +291,19 @@ void main_game_5(int dif,int pr){
         pGameMgr->Draw(window);
         window.display();
 
-        pGameMgr->CheckGameOver();
-        if (cnt == 30) {
+        //pGameMgr->CheckGameOver();
+        //게임 실패시
+        if (pGameMgr->isGameOver) {
+            failsound();
+            sf::sleep(sf::seconds(1.5f));
+            window.close();
+            if (pr == 1) {
+                practice(dif);
+            }
+            break;
+        }
+
+        if (cnt == 30) { // 게임 성공시
             window.close();
             //goto game_6;
         }

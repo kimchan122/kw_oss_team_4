@@ -193,16 +193,20 @@ void main_game_2(int dif, int pr)
             isGaming = false;
             app.draw(loseText);
             app.display();
+            failsound();
+            sf::sleep(sf::seconds(1.5f));
+            app.close();
+            break;
             if (pr == 1) {
                 //if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::Left)) {
                 if (Keyboard::isKeyPressed(Keyboard::Enter)) {
-                    app.close();
+                    //app.close();
                     practice(dif);
                     break;
                 }
             }
-            dy = 0;
-            dx = 0;
+            //dy = 0;
+            //dx = 0;
             //if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::Left)) {
             if (Keyboard::isKeyPressed(Keyboard::Enter)) {
                 app.close();
