@@ -6,7 +6,7 @@ struct point
     int x, y;
 };
 
-void main_game_2(int dif)
+void main_game_2(int dif, int pr)
 {
     srand(time(0));
 
@@ -40,7 +40,13 @@ void main_game_2(int dif)
                 app.close();
             if (e.type == sf::Event::Closed || (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 app.close(); // 게임창 닫고
-                main(1); // 메인화면 창을 다시 열기
+                
+                if (pr == 1) {
+                    practice(dif);
+                }
+                else {
+                    main(1); // 메인화면 창을 다시 열기
+                }
             }
         }
 
@@ -67,6 +73,12 @@ void main_game_2(int dif)
 
         // 게임 오버
         if (y > 500) {
+            if (pr == 1) {
+                // 실패 메시지(이미지) 출력
+                app.close();
+                practice(dif);
+                break;
+            }
             dy = 0;
             dx = 0;
             if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::Left)) {

@@ -10,7 +10,7 @@ struct TILE
     int HitNum=1; //깨지는 횟수
 };
 
-void main_game_1(int dif) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : hard
+void main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : hard
 {
     sf::RenderWindow window(sf::VideoMode(1024, 768), "Arkanoid");
     window.setFramerateLimit(60); // 60fps
@@ -92,15 +92,23 @@ void main_game_1(int dif) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : ha
                 }
             }
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
-                window.close(); // 게임창 닫고
-                main(1); // 메인화면 창을 다시 열기
+                window.close();
+                if (pr == 1) {
+                    practice(dif);
+                }
+                else {
+                    main(1); // 메인화면 창을 다시 열기
+                }
             }
         }
 
         // // // added
         if (ballY >=768) { // 밑으로 내려가는 경우 실패!
-            // 실패 메시지 출력
+            // 실패 메시지(이미지) 출력
             window.close();
+            if (pr == 1) {
+                practice(dif);
+            }
             break;
             //main(1); // 메인 또는 다음 게임으로 진행
             
@@ -182,6 +190,9 @@ void main_game_1(int dif) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : ha
         window.display(); // 표시
         if (cnt == 40) {
             window.close();
+            if (pr == 1) {
+                practice(dif);
+            }
             //게임 성공! 
             break;
         }

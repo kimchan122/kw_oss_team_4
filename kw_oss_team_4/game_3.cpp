@@ -217,7 +217,7 @@ void Spread(int x, int y)
     }
 }
 
-void main_game_3(int dif)
+void main_game_3(int dif, int pr)
 {
     difficulty = dif;
 
@@ -235,7 +235,7 @@ void main_game_3(int dif)
     result[0].setTexture(Result[0]); //win
     result[1].setTexture(Result[1]);
     result[0].setPosition(350, 200);
-    result[1].setPosition(350, 200);
+    result[1].setPosition(12, 80);
 
     int mouseX = 0; //클릭한 마우스 x좌표
     int mouseY = 0; //클릭한 마우스 y좌표
@@ -282,7 +282,12 @@ void main_game_3(int dif)
             }
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 window.close(); // 지뢰찾기 창을 닫고
-                main(1); // 메인화면 창을 다시 열기
+                if (pr == 1) {
+                    practice(dif);
+                }
+                else {
+                    main(1); // 메인화면 창을 다시 열기
+                }
             }
             if (event.type == sf::Event::MouseButtonPressed)
             {
@@ -299,7 +304,10 @@ void main_game_3(int dif)
                             {
                                 window.draw(result[1]);
                                 window.display();
-                                //window.close();
+                                sf::sleep(sf::seconds(5.0f));
+                                window.close();
+                                practice(dif);
+                                break;
                                 //next game;
                             }
                             else if (tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].num >= 1)

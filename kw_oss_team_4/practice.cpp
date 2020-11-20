@@ -66,19 +66,22 @@ void practice(int dif) {
                 musicstart();
                 main_difficulty();
             }
-            switch ((int)man.getPosition().y) {
-            case 418:
-                //window.close();
-                //main_difficulty();
-                break;
-            case 520:
-                //window.close();
-                // 만든 이 실행
-                break;
-            case 622:
-                //window.close();
-                break;
+            if (man.getPosition().x >= 0 && man.getPosition().x <= 96 && man.getPosition().y >= 0 && man.getPosition().y <= 72) { // game1
+                pmusicstop();
+                window.close();
+                main_game_1(dif,1);
             }
+            if (man.getPosition().x >= 0 && man.getPosition().x <= 96 && man.getPosition().y >= 200 && man.getPosition().y <= 272) { // game1
+                pmusicstop();
+                window.close();
+                main_game_2(dif, 1);
+            }
+            if (man.getPosition().x >= 0 && man.getPosition().x <= 96 && man.getPosition().y >= 400 && man.getPosition().y <= 472) { // game1
+                pmusicstop();
+                window.close();
+                main_game_3(dif, 1);
+            }
+
         }
 
         man.setPosition(man.getPosition() + speed); // 캐릭터 좌표 설정
