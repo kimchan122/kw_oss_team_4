@@ -1,7 +1,7 @@
 #include"game.h"
 
 using namespace sf;
-
+using namespace std;
 struct point
 {
     int x, y;
@@ -169,9 +169,8 @@ void main_game_2(int dif, int pr)
             
         }
 
-        
 
-
+       
         // 성공
         if (score == 100) {
             soundWin.play();
@@ -186,7 +185,6 @@ void main_game_2(int dif, int pr)
             
         }
 
-
         // 게임 오버
         if (y > 500) {
             soundLose.play();
@@ -194,12 +192,14 @@ void main_game_2(int dif, int pr)
             app.draw(loseText);
             app.display();
             if (pr == 1) {
+
                 //if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::Left)) {
                 if (Keyboard::isKeyPressed(Keyboard::Enter)) {
                     app.close();
                     practice(dif);
                     break;
                 }
+
             }
             dy = 0;
             dx = 0;

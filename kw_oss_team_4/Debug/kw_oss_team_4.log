@@ -1,4 +1,7 @@
-﻿  game_2.cpp
+﻿  game.cpp
+  gamecentre.cpp
+  game_1.cpp
+  game_2.cpp
 C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_2.cpp(16,15): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_2.cpp(131,22): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_2.cpp(132,20): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -10,4 +13,36 @@ C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_2.cpp(220,49): warn
 C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_2.cpp(220,38): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_2.cpp(221,49): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_2.cpp(221,38): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  kw_oss_team_4.vcxproj -> C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.exe
+  game_3.cpp
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_3.cpp(429,31): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  game_5.cpp
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_5.cpp(109,31): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_5.cpp(109,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_5.cpp(132,46): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_5.cpp(133,40): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_5.cpp(133,31): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_5.cpp(231,64): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_5.cpp(231,47): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  game_6.cpp
+  game_7.cpp
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_7.cpp(81,60): warning C4244: '인수': 'int'에서 'T'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=float
+          ]
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_7.cpp(81,45): warning C4244: '인수': 'int'에서 'T'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=float
+          ]
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_7.cpp(136,48): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_7.cpp(136,23): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_7.cpp(147,63): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qkrwl\source\repos\kw_oss_team_4\kw_oss_team_4\game_7.cpp(158,31): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  main.cpp
+  main_difficulty.cpp
+  main_story.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'main_story.cpp': No such file or directory
+  practice.cpp
+  selectmode.cpp
+  코드를 생성하고 있습니다...

@@ -86,6 +86,11 @@ void practice(int dif) {
                 window.close();
                 main_game_6(dif, 1);
             }
+            if (man.getPosition().x >= 198 && man.getPosition().x <= 320 && man.getPosition().y >= 600 && man.getPosition().y <= 672) { //game7
+                pmusicstop();
+                window.close();
+                main_game_7(dif, 1);
+            }
 
         }
 

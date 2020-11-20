@@ -105,6 +105,8 @@ void main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal
         // // // added
         if (ballY >=768) { // 밑으로 내려가는 경우 실패!
             // 실패 메시지(이미지) 출력
+            failsound();
+            sf::sleep(sf::seconds(1.5f));
             window.close();
             if (pr == 1) {
                 practice(dif);

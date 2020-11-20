@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 void main_difficulty()
 {
-    sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4");
+    sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4_diffi");
     window.setFramerateLimit(60); // 60fps
 
     sf::Texture tman; // 텍스쳐를 담을 tman 생성

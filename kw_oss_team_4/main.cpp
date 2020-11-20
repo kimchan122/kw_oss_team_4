@@ -7,7 +7,7 @@ int main(int sw)
     if (sw == 1) {
         musicstart();
     }
-    sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4");
+    sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4_main");
     window.setFramerateLimit(60); // 60fps
 
     sf::Texture tman; // 텍스쳐를 담을 tman 생성
