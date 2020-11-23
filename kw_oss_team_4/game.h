@@ -19,13 +19,14 @@ void pmusicstop();
 void failsound();
 
 void game_centre(int dif);
+void midres(int c);
 void main_story(int dif);
 
-void main_game_1(int dif, int pr);
-void main_game_2(int dif, int pr);
-void main_game_3(int dif, int pr);
-void main_game_5(int dif, int pr);
-void main_game_6(int dif, int pr);
-void main_game_7(int dif, int pr);
+int main_game_1(int dif, int pr);
+int main_game_2(int dif, int pr);
+int main_game_3(int dif, int pr);
+int main_game_5(int dif, int pr);
+int main_game_6(int dif, int pr);
+int main_game_7(int dif, int pr);
 void manclick();
 void cpuclicksound();

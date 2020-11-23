@@ -50,7 +50,7 @@ sf::Text temizle(float x, float y, string metin);
 sf::Text xCiz(float x, float y);
 sf::Text oCiz(float x, float y);
 
-void main_game_7(int dif, int pr)
+int main_game_7(int dif, int pr)
 {
 	sf::RenderWindow window(sf::VideoMode(mapWidth, mapHeight + 50), "Tic-Tac-Toe", sf::Style::Close);//sf::Style::Fullscreen
 	window.setFramerateLimit(30);
@@ -85,7 +85,7 @@ void main_game_7(int dif, int pr)
 					practice(dif);
 				}
 				else {
-					//main(1); // 메인화면 창을 다시 열기
+					musicstart();
 					main_difficulty();
 				}
 			}
@@ -107,6 +107,7 @@ void main_game_7(int dif, int pr)
 								if (pr == 1) {
 									practice(dif);
 								}
+								return 0;
 								break;
 							}
 						}
@@ -130,6 +131,7 @@ void main_game_7(int dif, int pr)
 									if (pr == 1) {
 										practice(dif);
 									}
+									return 1;
 									break;
 								}
 							}
@@ -148,7 +150,7 @@ void main_game_7(int dif, int pr)
 
 		window.display();
 	}
-	
+	return 0;
 }
 void gamewindow(sf::RenderWindow* window) {
 	// background

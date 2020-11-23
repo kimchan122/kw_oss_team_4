@@ -11,7 +11,7 @@ struct Enemy
     Vector2f speed = { 8,8 };
 };
 int i = 0;
-void main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : hard
+int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : hard
 {
     sf::RenderWindow window(sf::VideoMode(1024, 678), "dodge");
     window.setFramerateLimit(60); // 60fps
@@ -40,19 +40,14 @@ void main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal
         
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.KeyPressed == sf::Keyboard::Escape) {
-                    window.close();
-                    main(1);
-                }
-            }
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 window.close();
                 if (pr == 1) {
                     practice(dif);
                 }
                 else {
-                    main(1); // 메인화면 창을 다시 열기
+                    musicstart();
+                    main_difficulty();
                 }
             }
         }
@@ -96,4 +91,5 @@ void main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal
             i = 0;
         window.display(); // 표시
     }
+    return 0;
 }

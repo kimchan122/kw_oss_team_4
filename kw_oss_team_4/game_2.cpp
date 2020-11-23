@@ -8,7 +8,7 @@ struct point
     int valid = 1;
 };
 
-void main_game_2(int dif, int pr)
+int main_game_2(int dif, int pr)
 {
     bool isGaming = true;
     bool win = false;
@@ -109,8 +109,6 @@ void main_game_2(int dif, int pr)
         Event e;
         while (app.pollEvent(e))
         {
-            if (e.type == Event::Closed)
-                app.close();
             if (e.type == sf::Event::Closed || (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 app.close(); // 게임창 닫고
                 
@@ -118,7 +116,8 @@ void main_game_2(int dif, int pr)
                     practice(dif);
                 }
                 else {
-                    main(1); // 메인화면 창을 다시 열기
+                    musicstart();
+                    main_difficulty();
                 }
             }
         }
@@ -196,6 +195,7 @@ void main_game_2(int dif, int pr)
             failsound();
             sf::sleep(sf::seconds(1.5f));
             app.close();
+            return 1;
             break;
             if (pr == 1) {
                 //if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::Left)) {
@@ -231,6 +231,12 @@ void main_game_2(int dif, int pr)
 
         if (isGaming == false && win == true) {
             app.draw(winText);
+            app.display();
+            //suc sound
+            sf::sleep(sf::seconds(1.5f));
+            app.close();
+            return 0;
+            break;
         }
         if (isGaming == false && win == false) {
             app.draw(loseText);
@@ -238,5 +244,5 @@ void main_game_2(int dif, int pr)
         app.display();
     }
 
-    //return 0;
+    return 0;
 }

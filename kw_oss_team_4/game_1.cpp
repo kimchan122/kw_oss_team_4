@@ -10,7 +10,7 @@ struct TILE
     int HitNum=1; //깨지는 횟수
 };
 
-void main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : hard
+int main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal, 3 : hard
 {
     sf::RenderWindow window(sf::VideoMode(1024, 768), "Arkanoid");
     window.setFramerateLimit(60); // 60fps
@@ -32,6 +32,11 @@ void main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal
     soundPlayer.setBuffer(sbPlayer);
 
     TILE Tile[40];
+
+    sf::Font font;
+    sf::Font fonttictactoe(string fontPath);
+    sf::Text res;
+    font = fonttictactoe("font/BMJUA_ttf.ttf");
 
     spBack.setTexture(txBack); //
     spPlayer.setTexture(txPlayer);
@@ -91,7 +96,8 @@ void main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal
                     practice(dif);
                 }
                 else {
-                    main(1); // 메인화면 창을 다시 열기
+                    musicstart();
+                    main_difficulty();
                 }
             }
         }
@@ -99,12 +105,20 @@ void main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal
         // // // added
         if (ballY >=768) { // 밑으로 내려가는 경우 실패!
             // 실패 메시지(이미지) 출력
+            res.setFont(font);
+            res.setPosition(100, 200);
+            res.setFillColor(sf::Color::Red);
+            res.setCharacterSize(300);
+            res.setString("Failed!");
+            window.draw(res);
+            window.display();
             failsound();
             sf::sleep(sf::seconds(1.5f));
             window.close();
             if (pr == 1) {
                 practice(dif);
             }
+            return 1;
             break;
             //main(1); // 메인 또는 다음 게임으로 진행
             
@@ -185,12 +199,22 @@ void main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal
         window.draw(spPlayer);//플레이어
         window.display(); // 표시
         if (cnt == 40) {
+            res.setFont(font);
+            res.setPosition(100, 200);
+            res.setFillColor(sf::Color::Blue);
+            res.setCharacterSize(300);
+            res.setString("Success!");
+            window.draw(res);
+            //midres(&window, 1);
+            window.display();
             window.close();
             if (pr == 1) {
                 practice(dif);
             }
             //게임 성공! 
+            return 0;
             break;
         }
     }
+    return 0;
 }

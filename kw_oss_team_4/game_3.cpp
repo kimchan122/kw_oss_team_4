@@ -217,7 +217,7 @@ void Spread(int x, int y)
     }
 }
 
-void main_game_3(int dif, int pr)
+int main_game_3(int dif, int pr)
 {
     difficulty = dif;
 
@@ -274,19 +274,14 @@ void main_game_3(int dif, int pr)
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.KeyPressed == sf::Keyboard::Escape) {
-                    window.close();
-                    main(1);
-                }
-            }
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 window.close(); // 지뢰찾기 창을 닫고
                 if (pr == 1) {
                     practice(dif);
                 }
                 else {
-                    main(1); // 메인화면 창을 다시 열기
+                    musicstart();
+                    main_difficulty();
                 }
             }
             if (event.type == sf::Event::MouseButtonPressed)
@@ -307,6 +302,7 @@ void main_game_3(int dif, int pr)
                                 failsound();
                                 sf::sleep(sf::seconds(3.0f));
                                 window.close();
+                                return 1;
                                 if (pr == 1) {
                                     practice(dif);
                                 }
@@ -339,15 +335,14 @@ void main_game_3(int dif, int pr)
 
                                 if (SelectedTileNum == difSelectedTileNum && FoundMineNum == difFoundMineNum) //모든 지뢰 찾으면
                                 {
+                                    //cout << "다찾음!" << endl;
                                     window.draw(result[0]);
                                     window.display();
                                     sf::sleep(sf::seconds(3.0f));
                                     window.close();
+                                    return 0;
                                     if (pr == 1) {
                                         practice(dif);
-                                    }
-                                    else {
-                                        break;
                                     }
                                     break;
                                     //next game
@@ -391,6 +386,7 @@ void main_game_3(int dif, int pr)
                                         window.display();
                                         sf::sleep(sf::seconds(5.0f));
                                         window.close();
+                                        return 0;
                                         if (pr == 1) {
                                             practice(dif);
                                         }
@@ -431,5 +427,5 @@ void main_game_3(int dif, int pr)
         window.display(); // 표시
     }
 
-    //return 0;
+    return 0;
 }

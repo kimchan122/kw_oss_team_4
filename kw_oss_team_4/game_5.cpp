@@ -254,7 +254,7 @@ public:
     }
 };
 
-void main_game_5(int dif,int pr){
+int main_game_5(int dif,int pr){
     RenderWindow window(VideoMode(WIDTH, HEIGHT), "Stage 5");
     window.setFramerateLimit(40*dif);
 
@@ -265,17 +265,14 @@ void main_game_5(int dif,int pr){
         Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == Event::Closed)
-            {
-                window.close();
-            }
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 window.close(); // 게임창 닫고
                 if (pr == 1) {
                     practice(dif);
                 }
                 else {
-                    main(1); // 메인화면 창을 다시 열기
+                    musicstart();
+                    main_difficulty();
                 }
             }
             if (event.type == Event::KeyPressed)
@@ -297,6 +294,7 @@ void main_game_5(int dif,int pr){
             failsound();
             sf::sleep(sf::seconds(1.5f));
             window.close();
+            return 1;
             if (pr == 1) {
                 practice(dif);
             }
@@ -304,9 +302,16 @@ void main_game_5(int dif,int pr){
         }
 
         if (cnt == 30) { // 게임 성공시
+            sf::sleep(sf::seconds(1.5f));
             window.close();
+            return 0;
+            if (pr == 1) {
+                practice(dif);
+            }
+            break;
             //goto game_6;
         }
     }
     delete(pGameMgr);
+    return 0;
 }
