@@ -113,6 +113,14 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
         {
             if (playerRect.contains(enemy[i].spEnemy.getPosition())) //충돌했을 때 패배 이벤트
             {
+                failsound();
+                sf::sleep(sf::seconds(1.5f));
+                window.close();
+                if (pr == 1) {
+                    practice(dif);
+                }
+                return 1;
+                break;
                 cout << "lose " << endl;
             }
 

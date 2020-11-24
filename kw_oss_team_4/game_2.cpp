@@ -230,6 +230,7 @@ int main_game_2(int dif, int pr)
         app.draw(scoreText2);
 
         if (isGaming == false && win == true) {
+            sucsound();
             app.draw(winText);
             app.display();
             //suc sound

@@ -302,6 +302,7 @@ int main_game_5(int dif,int pr){
         }
 
         if (cnt == 30) { // 게임 성공시
+            sucsound();
             sf::sleep(sf::seconds(1.5f));
             window.close();
             return 0;

@@ -335,6 +335,7 @@ int main_game_3(int dif, int pr)
 
                                 if (SelectedTileNum == difSelectedTileNum && FoundMineNum == difFoundMineNum) //모든 지뢰 찾으면
                                 {
+                                    sucsound();
                                     //cout << "다찾음!" << endl;
                                     window.draw(result[0]);
                                     window.display();
@@ -382,6 +383,7 @@ int main_game_3(int dif, int pr)
                                     FoundMineNum++;
                                     if (FoundMineNum == difFoundMineNum && SelectedTileNum == difSelectedTileNum) //다 찾았으면
                                     {
+                                        sucsound();
                                         window.draw(result[0]);
                                         window.display();
                                         sf::sleep(sf::seconds(5.0f));

@@ -199,6 +199,7 @@ int main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
         window.draw(spPlayer);//플레이어
         window.display(); // 표시
         if (cnt == 40) {
+            sucsound();
             res.setFont(font);
             res.setPosition(100, 200);
             res.setFillColor(sf::Color::Blue);

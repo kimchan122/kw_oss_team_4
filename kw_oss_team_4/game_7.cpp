@@ -102,6 +102,7 @@ int main_game_7(int dif, int pr)
 							}
 							else { // 5번이기면 종료
 								//승리의 사운드 추가?
+								sucsound();
 								gameover = true;
 								window.close();
 								if (pr == 1) {
