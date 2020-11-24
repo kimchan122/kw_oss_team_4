@@ -1,3 +1,14 @@
-﻿  gamecentre.cpp
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(51,24): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  kw_oss_team_4.vcxproj -> C:\Users\Administrator\Source\Repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.exe
+﻿  game_6.cpp
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_6.cpp(51,55): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_6.cpp(51,45): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_6.cpp(52,58): warning C4244: '인수': 'int'에서 'T'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=float
+          ]
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_6.cpp(52,45): warning C4244: '인수': 'int'에서 'T'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=float
+          ]
+  kw_oss_team_4.vcxproj -> C:\Users\HanYS\Source\Repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.exe
