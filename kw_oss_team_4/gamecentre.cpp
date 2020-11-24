@@ -6,9 +6,9 @@ using namespace sf;
 void game_centre(int dif) {
 	int cnt = 7;
 	main_story(dif);
-	//midres(cnt);
-	//cnt-=main_game_1(dif,0);
-	/*midres(cnt);
+	midres(cnt);
+	cnt-=main_game_1(dif,0);
+	midres(cnt);
 	cnt-=main_game_2(dif,0);
 	midres(cnt);
 	cnt -= main_game_3(dif,0);
@@ -17,12 +17,14 @@ void game_centre(int dif) {
 	midres(cnt);
 	cnt -= main_game_6(dif, 0);
 	midres(cnt);
-	cnt -= main_game_7(dif, 0);*/
+	cnt -= main_game_7(dif, 0);
+	midres(cnt);
+	//cnt -= main_game_8(dif, 0);
 	//midres(cnt);
 	result(0);
 }
 void midres(int c) {
-	sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4_main");
+	sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4");
 	window.setFramerateLimit(60);
 
 	sf::Texture tbackground;

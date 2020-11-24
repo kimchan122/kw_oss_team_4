@@ -31,5 +31,6 @@ int main_game_3(int dif, int pr);
 int main_game_5(int dif, int pr);
 int main_game_6(int dif, int pr);
 int main_game_7(int dif, int pr);
+int main_game_8(int dif, int pr);
 void manclick();
 void cpuclicksound();
