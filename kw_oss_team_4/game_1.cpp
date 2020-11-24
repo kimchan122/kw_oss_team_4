@@ -15,6 +15,14 @@ int main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
     sf::RenderWindow window(sf::VideoMode(1024, 768), "Arkanoid");
     window.setFramerateLimit(60); // 60fps
 
+    sf::Texture tgtext;
+    tgtext.loadFromFile("img/main/g1.png");
+    sf::Sprite gtext;
+    gtext.setTexture(tgtext);
+    window.draw(gtext);
+    window.display();
+    sf::sleep(sf::seconds(2.0f));
+
     sf::Texture txBack, txPlayer, txTile1, txTile2, txBall; // 
     sf::SoundBuffer sbTile, sbPlayer; //사운드 버퍼
 

@@ -56,6 +56,14 @@ int main_game_7(int dif, int pr)
 	window.setFramerateLimit(30);
 	font = fonttictactoe("neuropol.ttf");
 
+	sf::Texture tgtext;
+	tgtext.loadFromFile("img/main/g7.png");
+	sf::Sprite gtext;
+	gtext.setTexture(tgtext);
+	window.draw(gtext);
+	window.display();
+	sf::sleep(sf::seconds(2.0f));
+
 	while (window.isOpen())
 	{
 		sf::Event event;

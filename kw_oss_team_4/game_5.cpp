@@ -258,6 +258,14 @@ int main_game_5(int dif,int pr){
     RenderWindow window(VideoMode(WIDTH, HEIGHT), "Stage 5");
     window.setFramerateLimit(40*dif);
 
+    sf::Texture tgtext;
+    tgtext.loadFromFile("img/main/g5.png");
+    sf::Sprite gtext;
+    gtext.setTexture(tgtext);
+    window.draw(gtext);
+    window.display();
+    sf::sleep(sf::seconds(2.0f));
+
     GameManager* pGameMgr = new GameManager();
     pGameMgr->Init();
     while (window.isOpen())
@@ -294,10 +302,11 @@ int main_game_5(int dif,int pr){
             failsound();
             sf::sleep(sf::seconds(1.5f));
             window.close();
-            return 1;
             if (pr == 1) {
                 practice(dif);
+                break;
             }
+            return 1;
             break;
         }
 
@@ -305,10 +314,11 @@ int main_game_5(int dif,int pr){
             sucsound();
             sf::sleep(sf::seconds(1.5f));
             window.close();
-            return 0;
             if (pr == 1) {
                 practice(dif);
+                break;
             }
+            return 0;
             break;
             //goto game_6;
         }

@@ -18,6 +18,14 @@ int main_game_2(int dif, int pr)
     RenderWindow app(VideoMode(400, 533), "Doodle Game!");
     app.setFramerateLimit(60);
 
+    sf::Texture tgtext;
+    tgtext.loadFromFile("img/main/g2.png");
+    sf::Sprite gtext;
+    gtext.setTexture(tgtext);
+    app.draw(gtext);
+    app.display();
+    sf::sleep(sf::seconds(2.0f));
+
     Texture t1, t2, t3, t4;
     t1.loadFromFile("img/game2/background.png");
     t2.loadFromFile("img/game2/platform.png");
@@ -195,16 +203,16 @@ int main_game_2(int dif, int pr)
             failsound();
             sf::sleep(sf::seconds(1.5f));
             app.close();
-            return 1;
-            break;
             if (pr == 1) {
                 //if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::Left)) {
-                if (Keyboard::isKeyPressed(Keyboard::Enter)) {
+                //if (Keyboard::isKeyPressed(Keyboard::Enter)) {
                     //app.close();
                     practice(dif);
                     break;
-                }
+                //}
             }
+            return 1;
+            break;
             //dy = 0;
             //dx = 0;
             //if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::Left)) {
@@ -236,6 +244,9 @@ int main_game_2(int dif, int pr)
             //suc sound
             sf::sleep(sf::seconds(1.5f));
             app.close();
+            if (pr == 1) {
+                practice(dif);
+            }
             return 0;
             break;
         }

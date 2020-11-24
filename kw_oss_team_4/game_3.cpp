@@ -224,6 +224,14 @@ int main_game_3(int dif, int pr)
     sf::RenderWindow window(sf::VideoMode(1024, 768), "MineSweeper");
     window.setFramerateLimit(60); // 60fps
 
+    sf::Texture tgtext;
+    tgtext.loadFromFile("img/main/g3.png");
+    sf::Sprite gtext;
+    gtext.setTexture(tgtext);
+    window.draw(gtext);
+    window.display();
+    sf::sleep(sf::seconds(2.0f));
+
     sf::Texture tsmile; // 스마일 마크
     tsmile.loadFromFile("img/game3/smile.png"); // tman에 이미지 로드
     sf::Sprite smile; // 객체 man을 생성
@@ -302,11 +310,11 @@ int main_game_3(int dif, int pr)
                                 failsound();
                                 sf::sleep(sf::seconds(3.0f));
                                 window.close();
-                                return 1;
                                 if (pr == 1) {
                                     practice(dif);
                                 }
                                 else {
+                                    return 1;
                                     break;
                                 }
                                 //next game;
@@ -341,9 +349,11 @@ int main_game_3(int dif, int pr)
                                     window.display();
                                     sf::sleep(sf::seconds(3.0f));
                                     window.close();
-                                    return 0;
                                     if (pr == 1) {
                                         practice(dif);
+                                    }
+                                    else {
+                                        return 0;
                                     }
                                     break;
                                     //next game
@@ -388,11 +398,11 @@ int main_game_3(int dif, int pr)
                                         window.display();
                                         sf::sleep(sf::seconds(5.0f));
                                         window.close();
-                                        return 0;
                                         if (pr == 1) {
                                             practice(dif);
                                         }
                                         else {
+                                            return 0;
                                             break;
                                         }
                                         break;

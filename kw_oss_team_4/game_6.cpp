@@ -16,6 +16,14 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
     sf::RenderWindow window(sf::VideoMode(1024, 678), "dodge");
     window.setFramerateLimit(60); // 60fps
 
+    sf::Texture tgtext;
+    tgtext.loadFromFile("img/main/g6.png");
+    sf::Sprite gtext;
+    gtext.setTexture(tgtext);
+    window.draw(gtext);
+    window.display();
+    sf::sleep(sf::seconds(2.0f));
+
     int difficulty;
     switch (dif) //난이도에 따른 공 개수 
     {
