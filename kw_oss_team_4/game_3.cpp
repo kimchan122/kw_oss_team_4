@@ -217,12 +217,20 @@ void Spread(int x, int y)
     }
 }
 
-void main_game_3(int dif, int pr)
+int main_game_3(int dif, int pr)
 {
     difficulty = dif;
 
     sf::RenderWindow window(sf::VideoMode(1024, 768), "MineSweeper");
     window.setFramerateLimit(60); // 60fps
+
+    sf::Texture tgtext;
+    tgtext.loadFromFile("img/main/g3.png");
+    sf::Sprite gtext;
+    gtext.setTexture(tgtext);
+    window.draw(gtext);
+    window.display();
+    sf::sleep(sf::seconds(2.0f));
 
     sf::Texture tsmile; // 스마일 마크
     tsmile.loadFromFile("img/game3/smile.png"); // tman에 이미지 로드
@@ -274,19 +282,14 @@ void main_game_3(int dif, int pr)
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.KeyPressed == sf::Keyboard::Escape) {
-                    window.close();
-                    main(1);
-                }
-            }
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 window.close(); // 지뢰찾기 창을 닫고
                 if (pr == 1) {
                     practice(dif);
                 }
                 else {
-                    main(1); // 메인화면 창을 다시 열기
+                    musicstart();
+                    main_difficulty();
                 }
             }
             if (event.type == sf::Event::MouseButtonPressed)
@@ -311,6 +314,7 @@ void main_game_3(int dif, int pr)
                                     practice(dif);
                                 }
                                 else {
+                                    return 1;
                                     break;
                                 }
                                 //next game;
@@ -339,6 +343,8 @@ void main_game_3(int dif, int pr)
 
                                 if (SelectedTileNum == difSelectedTileNum && FoundMineNum == difFoundMineNum) //모든 지뢰 찾으면
                                 {
+                                    sucsound();
+                                    //cout << "다찾음!" << endl;
                                     window.draw(result[0]);
                                     window.display();
                                     sf::sleep(sf::seconds(3.0f));
@@ -347,7 +353,7 @@ void main_game_3(int dif, int pr)
                                         practice(dif);
                                     }
                                     else {
-                                        break;
+                                        return 0;
                                     }
                                     break;
                                     //next game
@@ -387,6 +393,7 @@ void main_game_3(int dif, int pr)
                                     FoundMineNum++;
                                     if (FoundMineNum == difFoundMineNum && SelectedTileNum == difSelectedTileNum) //다 찾았으면
                                     {
+                                        sucsound();
                                         window.draw(result[0]);
                                         window.display();
                                         sf::sleep(sf::seconds(5.0f));
@@ -395,6 +402,7 @@ void main_game_3(int dif, int pr)
                                             practice(dif);
                                         }
                                         else {
+                                            return 0;
                                             break;
                                         }
                                         break;
@@ -431,5 +439,5 @@ void main_game_3(int dif, int pr)
         window.display(); // 표시
     }
 
-    //return 0;
+    return 0;
 }

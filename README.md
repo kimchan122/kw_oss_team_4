@@ -2,9 +2,6 @@
 Kwangwoon University
 Open Source Software Development Team 4.
 
-# These are the names of our proud team members!
-null
-
 # Before start...
  - We hope you don't see this game as just one college team project.
  - Through this project, we were able to gain a lot of knowledge about OSS. This is a natural fact.

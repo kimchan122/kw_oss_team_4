@@ -1,14 +1,14 @@
 #include"game.h"
 
 using namespace sf;
-using namespace std;
+
 struct point
 {
     int x, y;
     int valid = 1;
 };
 
-void main_game_2(int dif, int pr)
+int main_game_2(int dif, int pr)
 {
     bool isGaming = true;
     bool win = false;
@@ -17,6 +17,14 @@ void main_game_2(int dif, int pr)
 
     RenderWindow app(VideoMode(400, 533), "Doodle Game!");
     app.setFramerateLimit(60);
+
+    sf::Texture tgtext;
+    tgtext.loadFromFile("img/main/g2.png");
+    sf::Sprite gtext;
+    gtext.setTexture(tgtext);
+    app.draw(gtext);
+    app.display();
+    sf::sleep(sf::seconds(2.0f));
 
     Texture t1, t2, t3, t4;
     t1.loadFromFile("img/game2/background.png");
@@ -109,8 +117,6 @@ void main_game_2(int dif, int pr)
         Event e;
         while (app.pollEvent(e))
         {
-            if (e.type == Event::Closed)
-                app.close();
             if (e.type == sf::Event::Closed || (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
                 app.close(); // 게임창 닫고
                 
@@ -118,7 +124,8 @@ void main_game_2(int dif, int pr)
                     practice(dif);
                 }
                 else {
-                    main(1); // 메인화면 창을 다시 열기
+                    musicstart();
+                    main_difficulty();
                 }
             }
         }
@@ -169,8 +176,9 @@ void main_game_2(int dif, int pr)
             
         }
 
+        
 
-       
+
         // 성공
         if (score == 100) {
             soundWin.play();
@@ -185,24 +193,28 @@ void main_game_2(int dif, int pr)
             
         }
 
+
         // 게임 오버
         if (y > 500) {
             soundLose.play();
             isGaming = false;
             app.draw(loseText);
             app.display();
+            failsound();
+            sf::sleep(sf::seconds(1.5f));
+            app.close();
             if (pr == 1) {
-
                 //if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::Left)) {
-                if (Keyboard::isKeyPressed(Keyboard::Enter)) {
-                    app.close();
+                //if (Keyboard::isKeyPressed(Keyboard::Enter)) {
+                    //app.close();
                     practice(dif);
                     break;
-                }
-
+                //}
             }
-            dy = 0;
-            dx = 0;
+            return 1;
+            break;
+            //dy = 0;
+            //dx = 0;
             //if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::Left)) {
             if (Keyboard::isKeyPressed(Keyboard::Enter)) {
                 app.close();
@@ -226,7 +238,17 @@ void main_game_2(int dif, int pr)
         app.draw(scoreText2);
 
         if (isGaming == false && win == true) {
+            sucsound();
             app.draw(winText);
+            app.display();
+            //suc sound
+            sf::sleep(sf::seconds(1.5f));
+            app.close();
+            if (pr == 1) {
+                practice(dif);
+            }
+            return 0;
+            break;
         }
         if (isGaming == false && win == false) {
             app.draw(loseText);
@@ -234,5 +256,5 @@ void main_game_2(int dif, int pr)
         app.display();
     }
 
-    //return 0;
+    return 0;
 }

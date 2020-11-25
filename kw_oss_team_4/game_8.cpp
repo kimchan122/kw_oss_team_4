@@ -1,13 +1,9 @@
 #include "game.h"
 using namespace std;
 using namespace sf;
-int main(int sw)
+int main_game_8(int dif, int pr)
 {
-    cout << sw << endl;
-    if (sw == 1) {
-        musicstart();
-    }
-    sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4_main");
+    sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4_Game_8");
     window.setFramerateLimit(60); // 60fps
 
     sf::Texture tman; // 텍스쳐를 담을 tman 생성
@@ -68,7 +64,7 @@ int main(int sw)
             }
         }
 
-        man.setPosition(man.getPosition()+speed); // 캐릭터 좌표 설정
+        man.setPosition(man.getPosition() + speed); // 캐릭터 좌표 설정
         window.draw(background); // 배경화면 그리기
 
         if (man.getPosition().y < 418) { // 위로 나가지 않게
