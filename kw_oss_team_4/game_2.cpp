@@ -149,7 +149,7 @@ int main_game_2(int dif, int pr)
                         plat[i].y = 0; plat[i].x = rand() % (400 - 68);
                         coin[i].valid = 1;
                         coin[i].y = plat[i].y - 45; coin[i].x = plat[i].x + 12;
-                        soundJump.play();
+                        //soundJump.play();
                     }
                 }
 
@@ -181,7 +181,7 @@ int main_game_2(int dif, int pr)
 
         // 성공
         if (score == 100) {
-            soundWin.play();
+            //soundWin.play();
             win = true;
             dy = 0;
             dx = 0;
@@ -196,7 +196,7 @@ int main_game_2(int dif, int pr)
 
         // 게임 오버
         if (y > 500) {
-            soundLose.play();
+            //soundLose.play();
             isGaming = false;
             app.draw(loseText);
             app.display();
