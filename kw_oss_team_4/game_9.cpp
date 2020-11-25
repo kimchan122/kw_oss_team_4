@@ -31,6 +31,14 @@ int main_game_9(int dif, int pr)
     RenderWindow app(VideoMode(1024, 786), "1to50");
     app.setFramerateLimit(60);
 
+
+    sf::Texture tgtext;
+    tgtext.loadFromFile("img/main/g9.png");
+    sf::Sprite gtext;
+    gtext.setTexture(tgtext);
+    app.draw(gtext);
+    app.display();
+    sf::sleep(sf::seconds(2.0f));
     /*
     * 조작법
     * 1부터 50까지의 버튼을 빠르게 클릭한다.
@@ -303,6 +311,7 @@ int main_game_9(int dif, int pr)
                 break;
             }sf::sleep(sf::seconds(1.5f));
             app.close();
+            return 1;
         }
         app.display();
     }

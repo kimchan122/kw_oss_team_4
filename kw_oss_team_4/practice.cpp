@@ -86,15 +86,25 @@ void practice(int dif) {
                 window.close();
                 main_game_5(dif, 1);
             }
-            if (man.getPosition().x >= 200 && man.getPosition().x <= 320 && man.getPosition().y >= 600 && man.getPosition().y <= 678) { //game6
+            if (man.getPosition().x >= 850 && man.getPosition().x <= 955 && man.getPosition().y >= 0 && man.getPosition().y <= 64) { //game6
                 pmusicstop();
                 window.close();
                 main_game_6(dif, 1);
             }
-            if (man.getPosition().x >= 420 && man.getPosition().x <= 540 && man.getPosition().y >= 600 && man.getPosition().y <= 678) { //game7
+            if (man.getPosition().x >= 850 && man.getPosition().x <= 955 && man.getPosition().y >= 200 && man.getPosition().y <= 264) { //game7
                 pmusicstop();
                 window.close();
                 main_game_7(dif, 1);
+            }
+            if (man.getPosition().x >= 850 && man.getPosition().x <= 955 && man.getPosition().y >= 400 && man.getPosition().y <= 464) { //game8
+                pmusicstop();
+                window.close();
+                main_game_8(dif, 1);
+            }
+            if (man.getPosition().x >= 850 && man.getPosition().x <= 955 && man.getPosition().y >= 600 && man.getPosition().y <= 678) { //game9
+                pmusicstop();
+                window.close();
+                main_game_9(dif, 1);
             }
 
         }
