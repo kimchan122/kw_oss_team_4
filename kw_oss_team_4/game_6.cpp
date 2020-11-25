@@ -16,6 +16,15 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
     sf::RenderWindow window(sf::VideoMode(1024, 678), "dodge");
     window.setFramerateLimit(60); // 60fps
 
+    //font & text
+    Font font;
+    font.loadFromFile("img/game6/arial.ttf");
+    Text timeTxt;
+    timeTxt.setFont(font);
+    timeTxt.setCharacterSize(50);
+    timeTxt.setFillColor(Color::Red);
+    timeTxt.setStyle(Text::Bold);
+
     sf::Texture tgtext;
     tgtext.loadFromFile("img/main/g6.png");
     sf::Sprite gtext;
@@ -27,21 +36,26 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
     int difficulty;
     switch (dif) //난이도에 따른 공 개수 
     {
-    case 1:difficulty = 150; break;
-    case 2:difficulty = 200; break;
-    case 3:difficulty = 250; break;
+    case 1:difficulty = 100; break;
+    case 2:difficulty = 150; break;
+    case 3:difficulty = 200; break;
     }
 
-    Texture txBackground, txPlayer, txEnemy;
+    //texture
+    Texture txBackground, txPlayer, txEnemy, txShield;
     txBackground.loadFromFile("img/game6/background.png");
-    txPlayer.loadFromFile("img/game6/poland.png");
+    txPlayer.loadFromFile("img/game6/player.png");
     txEnemy.loadFromFile("img/game6/enemy.png");
+    txShield.loadFromFile("img/game6/shield.png");
 
+    //sprite
     Enemy* enemy = new Enemy[difficulty];
-    Sprite spBackground,spPlayer;
+    Sprite spBackground,spPlayer, spShield;
     spBackground.setTexture(txBackground);
     spPlayer.setTexture(txPlayer);
+    spShield.setTexture(txShield);
 
+    //set random
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<int> dis1(0, 1023); //무작위 공 생성위치
@@ -69,15 +83,17 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
         enemy[i].enemyRect = enemy[i].spEnemy.getGlobalBounds();
     }
 
+    //setposition
     spPlayer.setPosition(512, 384);
-
-    Clock clock;
+    spShield.setPosition(420, 300);
+    timeTxt.setPosition(460, 0);
+    Clock clock, clock1;
     
     while (window.isOpen())
     {
         sf::Event event;
         FloatRect playerRect = spPlayer.getGlobalBounds();
-
+        FloatRect shieldRect = spShield.getGlobalBounds();
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
@@ -94,6 +110,7 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
 
         Vector2f speed = { 0,0 }; // 속도 초기화
         Time elapsed = clock.getElapsedTime(); //다음 restart() 까지 걸린 시간
+        Time TimeLimit = clock1.getElapsedTime();
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) { speed.y = 8.0f; } //하
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) { speed.y = -8.0f; } //상
@@ -117,21 +134,24 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
         
         window.draw(spBackground);
         window.draw(spPlayer);
+        window.draw(spShield);
         for (int i = 0; i < difficulty; i++)
         {
-            if (playerRect.contains(enemy[i].spEnemy.getPosition())) //충돌했을 때 패배 이벤트
+            if (!shieldRect.contains(spPlayer.getPosition()))
             {
-                failsound();
-                sf::sleep(sf::seconds(1.5f));
-                window.close();
-                if (pr == 1) {
-                    practice(dif);
+                if (playerRect.contains(enemy[i].spEnemy.getPosition())) //충돌했을 때 패배 이벤트
+                {
+                    failsound();
+                    sf::sleep(sf::seconds(1.5f));
+                    window.close();
+                    if (pr == 1) {
+                        practice(dif);
+                    }
+                    return 1;
+                    break;
+                    cout << "lose " << endl;
                 }
-                return 1;
-                break;
-                cout << "lose " << endl;
             }
-
             enemy[i].spEnemy.setPosition(enemy[i].spEnemy.getPosition() + enemy[i].speed);
             if (enemy[i].spEnemy.getPosition().x <= 0 || enemy[i].spEnemy.getPosition().x >= 1023)
                 enemy[i].speed.x = -enemy[i].speed.x;
@@ -140,12 +160,28 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
 
             window.draw(enemy[i].spEnemy);
         }
-        if (elapsed.asSeconds() >= 0.3) //0.3초마다 발생 이벤트
+        if (elapsed.asSeconds() >= 2) //0.3초마다 발생 이벤트
         {
-            
+            spShield.setPosition(dis1(gen), dis2(gen)); //쉴드 위치 변경
             clock.restart(); //타이머 재시작
         }
+        string s = to_string(10-TimeLimit.asSeconds());
+
+        timeTxt.setString(s);
+        window.draw(timeTxt);
         window.display(); // 표시
+
+        if (stod(s) <= 0.0) //미션 성공 이벤트
+        {
+            failsound();
+            sf::sleep(sf::seconds(1.5f));
+            window.close();
+            if (pr == 1) {
+                practice(dif);
+            }
+            return 1;
+            break;
+        }
     }
     return 0;
 }
