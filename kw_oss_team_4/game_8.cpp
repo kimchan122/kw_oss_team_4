@@ -40,12 +40,12 @@ int main_game_8(int dif, int pr)
         timers.setString("50.00");
     }
     else if (dif == 2) {
-        cnt = 45;
-        timers.setString("45.00");
+        cnt = 30;
+        timers.setString("30.00");
     }
     else if (dif == 3) {
-        cnt = 40;
-        timers.setString("40.00");
+        cnt = 10;
+        timers.setString("10.00");
     }
     window.draw(gpress);
     int sww = 0;
