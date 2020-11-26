@@ -121,7 +121,7 @@ int main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
             window.draw(res);
             window.display();
             failsound();
-            sf::sleep(sf::seconds(1.5f));
+            sf::sleep(sf::seconds(2.0f));
             window.close();
             if (pr == 1) {
                 practice(dif);
@@ -210,12 +210,13 @@ int main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
             sucsound();
             res.setFont(font);
             res.setPosition(100, 200);
-            res.setFillColor(sf::Color::Blue);
+            res.setFillColor(sf::Color::Yellow);
             res.setCharacterSize(300);
             res.setString("Success!");
             window.draw(res);
             //midres(&window, 1);
             window.display();
+            sf::sleep(sf::seconds(2.0f));
             window.close();
             if (pr == 1) {
                 practice(dif);

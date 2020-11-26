@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 void game_centre(int dif) {
-	int cnt = 7;
+	int cnt = 8;
 	main_story(dif);
 	midres(cnt);
 	cnt-=main_game_1(dif,0);
@@ -19,11 +19,11 @@ void game_centre(int dif) {
 	midres(cnt);
 	cnt -= main_game_7(dif, 0);
 	midres(cnt);
-	//cnt -= main_game_8(dif, 0);
-	//midres(cnt);
+	cnt -= main_game_8(dif, 0);
+	midres(cnt);
 	cnt -= main_game_9(dif, 0);
 	midres(cnt);
-	result(0);
+	result(cnt);
 }
 void midres(int c) {
 	sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4");
@@ -47,13 +47,13 @@ void midres(int c) {
 	
 	res.setFont(font);
 	res.setFillColor(sf::Color::Yellow);
-	res.setCharacterSize(200);
+	res.setCharacterSize(170);
 	res.setString("o");
 	for (int i = 0; i < c; i++) {
 		getsound();
 		window.draw(rest);
 		for (int j = 0; j <= i; j++) {
-			res.setPosition(150 * j, 200);
+			res.setPosition(130 * j, 200);
 			window.draw(res);
 		}
 		window.display();
@@ -62,6 +62,7 @@ void midres(int c) {
 	sf::sleep(sf::seconds(2.0f));
 }
 void result(int c) {
+	cout << "C : "<<c << endl;
 	sf::RenderWindow window(sf::VideoMode(1024, 768), "OSS_Team_4_RESULT");
 	window.setFramerateLimit(60);
 
@@ -83,7 +84,7 @@ void result(int c) {
 	sf::Text res;
 	res.setFont(font);
 	res.setFillColor(sf::Color::Yellow);
-	res.setCharacterSize(200);
+	res.setCharacterSize(170);
 	res.setString("o");
 
 	sf::Text restt;
@@ -96,7 +97,7 @@ void result(int c) {
 		window.draw(background);
 		window.draw(rest);
 		for (int j = 0; j <= i; j++) {
-			res.setPosition(150 * j, 200);
+			res.setPosition(130 * j, 200);
 			window.draw(res);
 		}
 		window.display();
@@ -104,7 +105,7 @@ void result(int c) {
 	}
 	sf::sleep(sf::seconds(1.0f));
 	getsound();
-	if (c >= 6) {
+	if (c >= 7) {
 		for (int i = 0; i < c; i++) {
 			window.draw(background);
 			window.draw(rest);
@@ -119,7 +120,7 @@ void result(int c) {
 		window.draw(restt);
 		window.display();
 	}
-	else if (c == 4 || c == 5) {
+	else if (c == 5 || c == 6) {
 		for (int i = 0; i < c; i++) {
 			window.draw(background);
 			window.draw(rest);
@@ -134,7 +135,7 @@ void result(int c) {
 		window.draw(restt);
 		window.display();
 	}
-	else if (c == 3 || c==2) {
+	else if (c == 4 || c==3) {
 		for (int i = 0; i < c; i++) {
 			window.draw(background);
 			window.draw(rest);
@@ -149,7 +150,7 @@ void result(int c) {
 		window.draw(restt);
 		window.display();
 	}
-	else if (c == 1) {
+	else if (c == 2 || c==1) {
 		for (int i = 0; i < c; i++) {
 			window.draw(background);
 			window.draw(rest);
