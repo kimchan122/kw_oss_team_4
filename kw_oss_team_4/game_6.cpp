@@ -37,8 +37,8 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
     switch (dif) //난이도에 따른 공 개수 
     {
     case 1:difficulty = 100; break;
-    case 2:difficulty = 150; break;
-    case 3:difficulty = 200; break;
+    case 2:difficulty = 140; break;
+    case 3:difficulty = 180; break;
     }
 
     //texture
@@ -60,8 +60,8 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
     mt19937 gen(rd());
     uniform_int_distribution<int> dis1(0, 1023); //무작위 공 생성위치
     uniform_int_distribution<int> dis2(0, 677);
-    uniform_int_distribution<int> dis3(-4, 4); //무작위속도
-    uniform_int_distribution<int> dis4(-4, 4); // ""
+    uniform_int_distribution<int> dis3(-3, 3); //무작위속도
+    uniform_int_distribution<int> dis4(-3, 3); // ""
     
     //srand((unsigned int)time(NULL));
     int* rand1 = new int[difficulty];
@@ -85,7 +85,7 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
 
     //setposition
     spPlayer.setPosition(512, 384);
-    spShield.setPosition(420, 300);
+    spShield.setPosition(425, 290);
     timeTxt.setPosition(460, 0);
     Clock clock, clock1;
     
@@ -155,9 +155,13 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
             enemy[i].spEnemy.setPosition(enemy[i].spEnemy.getPosition() + enemy[i].speed);
             if (enemy[i].spEnemy.getPosition().x <= 0 || enemy[i].spEnemy.getPosition().x >= 1023)
                 enemy[i].speed.x = -enemy[i].speed.x;
-            if(enemy[i].spEnemy.getPosition().y <= 0 || enemy[i].spEnemy.getPosition().x >= 677)
+            if(enemy[i].spEnemy.getPosition().y <= 0 || enemy[i].spEnemy.getPosition().y >= 677)
                 enemy[i].speed.y = -enemy[i].speed.y;
-
+            if (shieldRect.contains(enemy[i].spEnemy.getPosition()))
+            {
+                enemy[i].speed.x = -enemy[i].speed.x;
+                enemy[i].speed.y = -enemy[i].speed.y;
+            }
             window.draw(enemy[i].spEnemy);
         }
         if (elapsed.asSeconds() >= 2) //0.3초마다 발생 이벤트
@@ -165,7 +169,7 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
             spShield.setPosition(dis1(gen), dis2(gen)); //쉴드 위치 변경
             clock.restart(); //타이머 재시작
         }
-        string s = to_string(10-TimeLimit.asSeconds());
+        string s = to_string(10-(int)TimeLimit.asSeconds());
 
         timeTxt.setString(s);
         window.draw(timeTxt);
@@ -173,7 +177,7 @@ int main_game_6(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
 
         if (stod(s) <= 0.0) //미션 성공 이벤트
         {
-            failsound();
+            sucsound();
             sf::sleep(sf::seconds(1.5f));
             window.close();
             if (pr == 1) {

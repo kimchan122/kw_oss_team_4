@@ -216,7 +216,7 @@ int main_game_9(int dif, int pr)
 
                         if (pos.x > tiles2[i][j].x && pos.x < tiles2[i][j].x + TILE_WIDTH &&
                             pos.y > tiles2[i][j].y && pos.y < tiles2[i][j].y + TILE_WIDTH)
-                        {
+                        { 
                             if (tiles1[i][j].valid ==0 && tiles2[i][j].valid == 1) {
                                 if (num == tiles2[i][j].num) {
                                     tiles2[i][j].valid = 0;
