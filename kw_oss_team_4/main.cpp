@@ -1,8 +1,12 @@
+#define NOMINMAX
+#include<Windows.h>
 #include "game.h"
 using namespace std;
 using namespace sf;
 int main(int sw)
 {
+    HWND hWndConsole = GetConsoleWindow();
+    ShowWindow(hWndConsole, SW_HIDE);
     cout << sw << endl;
     if (sw == 1) {
         musicstart();

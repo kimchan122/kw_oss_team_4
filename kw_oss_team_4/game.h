@@ -1,4 +1,4 @@
-#pragma once
+#pragma comment(lib,"user32.lib")
 #include<iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>

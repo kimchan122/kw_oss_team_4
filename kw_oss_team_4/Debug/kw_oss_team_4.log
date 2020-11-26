@@ -1,6 +1,9 @@
-﻿  game_8.cpp
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_8.cpp(80,19): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_8.cpp(121,49): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_8.cpp(125,17): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_8.cpp(122,21): warning C4390: ';': 제어된 빈 문이 있습니다. 이 문이 필요합니까?
+﻿  gamecentre.cpp
+C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(56,24): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(100,24): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(113,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(128,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(143,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(158,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(175,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   kw_oss_team_4.vcxproj -> C:\Users\Administrator\Source\Repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.exe
