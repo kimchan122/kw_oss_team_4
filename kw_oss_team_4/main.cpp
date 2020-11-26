@@ -58,7 +58,8 @@ int main(int sw)
                 main_difficulty();
                 break;
             case 520: //만든이
-                //window.close();
+                window.close();
+                main_makers();
                 // 만든 이 실행
                 break;
             case 622: //나가기

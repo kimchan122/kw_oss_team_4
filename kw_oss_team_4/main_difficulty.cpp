@@ -33,17 +33,6 @@ void main_difficulty()
                 window.close(); // 게임창 닫고
                 main(0); // 메인화면 창을 다시 열기
             }
-            if (event.type == sf::Event::MouseButtonPressed)
-            {
-                if (event.mouseButton.button == sf::Mouse::Left) //마우스 좌클릭 이벤트
-                {
-                    Vector2i pos = Mouse::getPosition(window);
-                    mouseX = pos.x;
-                    mouseY = pos.y;
-                    cout << mouseX << endl;
-                    cout << mouseY << endl;
-                }
-            }
         }
         window.clear();
         sf::Vector2f speed = { 0,0 }; // 속도 초기화
