@@ -2,6 +2,13 @@
 광운대학교
 오픈소스소프트웨어개발 팀4
 
+<div>
+<img src="https://user-images.githubusercontent.com/66289619/100411142-3bc5d700-30b4-11eb-8d11-8f5c2c1cb3de.png"></img>
+<img src="https://user-images.githubusercontent.com/66289619/100411142-3bc5d700-30b4-11eb-8d11-8f5c2c1cb3de.png"></img>
+<img src="https://user-images.githubusercontent.com/66289619/100411142-3bc5d700-30b4-11eb-8d11-8f5c2c1cb3de.png"></img>
+<img src="https://user-images.githubusercontent.com/66289619/100411142-3bc5d700-30b4-11eb-8d11-8f5c2c1cb3de.png"></img>
+</div>
+
 # 프로젝트 내용
  - 이 프로젝트는 미니 게임을 통해 게임을 테스트하는 스토리의 게임입니다!
  - 당신은 그 어떤 게임이든 완벽하게 클리어하기로 소문난 엄청난 능력을 갖고 있는 사람입니다!
@@ -32,7 +39,9 @@
  - SFML 라이브러리 적용 방법 링크(네이버 블로그) : https://m.blog.naver.com/PostView.nhn?blogId=xowww&logNo=220874707865&proxyReferer=https:%2F%2Fwww.google.com%2F
  
 # 사용 방법
- - 게임을 시작하기 위해서는 압축 해제 후 확인할 수 있는 바로가기 아이콘인 'kw_oss_team_4.exe.lnk'를 클릭하여 실행할 수 있습니다.
+ - 게임을 시작하기 위해서, 프로젝트 폴더의 바로가기 아이콘 'kw_oss_team_4.exe.lnk'를 클릭하여 실행할 수 있습니다.<br>
+ <img src="https://user-images.githubusercontent.com/66289619/100411142-3bc5d700-30b4-11eb-8d11-8f5c2c1cb3de.png"></img><br>
+ 이렇게 생겼습니다...<br>
  - 만약 바로가기 아이콘이 작동되지 않는 경우, 'kw_oss_team_4/Debug/kw_oss_team_4.exe' 에 위치한 실행 파일을 클릭하여 실행할 수 있습니다.
  - 기본적인 메뉴 조작은 키보드 방향키, Enter키, Escape키로 조작합니다.
  - 게임 조작은 키보드 방향키, 엔터키, 마우스로 조작합니다.
