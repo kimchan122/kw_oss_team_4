@@ -36,16 +36,9 @@ int main(int sw)
         {
             if (event.type == sf::Event::Closed)
                 window.close();
-            if (event.type == sf::Event::MouseButtonPressed)
-            {
-                if (event.mouseButton.button == sf::Mouse::Left) //마우스 좌클릭 이벤트
-                {
-                    Vector2i pos = Mouse::getPosition(window);
-                    mouseX = pos.x;
-                    mouseY = pos.y;
-                    cout << mouseX << endl;
-                    cout << mouseY << endl;
-                }
+            if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) { // 스크린의 X버튼을 누르거나, 혹은 키보드의 ESC를 누르면 메인화면으로 돌아가도록 수정
+                window.close(); // 게임창 닫고
+                return 0;
             }
         }
         window.clear();
@@ -85,12 +78,6 @@ int main(int sw)
         window.draw(man); // 캐릭터 그리기
 
         window.display(); // 표시
-
-        double x = man.getPosition().x; // 좌표 확인을 위한 콘솔창 출력
-        double y = man.getPosition().y;
-        cout << x << endl;
-        cout << y << endl << endl;
     }
-
     return 0;
 }

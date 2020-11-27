@@ -1,9 +1,2 @@
-﻿  gamecentre.cpp
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(56,24): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(100,24): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(113,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(128,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(143,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(158,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(175,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  main.cpp
   kw_oss_team_4.vcxproj -> C:\Users\Administrator\Source\Repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.exe
