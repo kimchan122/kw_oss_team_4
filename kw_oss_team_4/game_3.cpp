@@ -18,6 +18,7 @@ int difY = 1; //난이도 별 게임판 열
 struct TileInfo tileInfo[16][16];
 Texture tTile[16][16]; // 빈 타일
 Texture Result[2];
+Texture oneMore[1];
 Sprite Tile[16][16];
 
 Texture tsmile;
@@ -250,9 +251,15 @@ int main_game_3(int dif, int pr)
     result[0].setPosition(350, 200);
     result[1].setPosition(12, 80);
 
+    oneMore[0].loadFromFile("img/game3/tryagain.png");
+    Sprite onemore[1];
+    onemore[0].setTexture(oneMore[0]); //첫지뢰case
+    onemore[0].setPosition(350, 200);
+
+
     int mouseX = 0; //클릭한 마우스 x좌표
     int mouseY = 0; //클릭한 마우스 y좌표
-
+    bool isFirst = true;
     switch (difficulty)
     {
     case 1:
@@ -311,6 +318,13 @@ int main_game_3(int dif, int pr)
                         {
                             if (tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].isMine) //클릭한 타일이 지뢰이면
                             {
+                                if (isFirst == true) {
+                                    window.draw(onemore[0]);
+                                    window.display();
+                                    sf::sleep(sf::seconds(3.0f));
+                                    isFirst = false;
+                                    break;
+                                }
                                 window.draw(result[1]);
                                 window.display();
                                 failsound();
@@ -374,11 +388,13 @@ int main_game_3(int dif, int pr)
                                     window.display();
                                 }
                             }
+                            isFirst = false;
 
                             tileInfo[(mouseX - 200) / 40][(mouseY - 100) / 40].isSelected = true;
                         }
                         cout << SelectedTileNum << endl;
                     }
+                    //isFirst = false;
                 }
                 else if (event.mouseButton.button == sf::Mouse::Right) //마우스 우클릭 이벤트
                 {
