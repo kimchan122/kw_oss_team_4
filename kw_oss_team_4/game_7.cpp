@@ -121,6 +121,7 @@ int main_game_7(int dif, int pr)
 							}
 						}
 						else if (drwaControl()) { // ºóÄ­ ¾øÀ¸¸é false 
+							sf::sleep(sf::seconds(2.0f));
 							elReset(a);
 							roundNumber++;
 						}
@@ -413,27 +414,35 @@ void elReset(short stateMatrix[3][3]) {
 
 bool endControl(short stateMatrix[3][3], short userIDParam) { //
 	if (stateMatrix[0][0] == userIDParam and stateMatrix[0][1] == userIDParam and stateMatrix[0][2] == userIDParam) {
+		sf::sleep(sf::seconds(1.0f));
 		return true; //  1.°¡·Î
 	}
 	if (stateMatrix[1][0] == userIDParam and stateMatrix[1][1] == userIDParam and stateMatrix[1][2] == userIDParam) {
+		sf::sleep(sf::seconds(1.0f));
 		return true; // 2.
 	}
 	if (stateMatrix[2][0] == userIDParam and stateMatrix[2][1] == userIDParam and stateMatrix[2][2] == userIDParam) {
+		sf::sleep(sf::seconds(1.0f));
 		return true; // 3.
 	}
 	if (stateMatrix[0][0] == userIDParam and stateMatrix[1][0] == userIDParam and stateMatrix[2][0] == userIDParam) {
+		sf::sleep(sf::seconds(1.0f));
 		return true; // 1.¼¼·Î 
 	}
 	if (stateMatrix[0][1] == userIDParam and stateMatrix[1][1] == userIDParam and stateMatrix[2][1] == userIDParam) {
+		sf::sleep(sf::seconds(1.0f));
 		return true; // 2.
 	}
 	if (stateMatrix[0][2] == userIDParam and stateMatrix[1][2] == userIDParam and stateMatrix[2][2] == userIDParam) {
+		sf::sleep(sf::seconds(1.0f));
 		return true; // 3.
 	}
 	if (stateMatrix[0][0] == userIDParam and stateMatrix[1][1] == userIDParam and stateMatrix[2][2] == userIDParam) {
+		sf::sleep(sf::seconds(1.0f));
 		return true; // Cross left top - bottom right
 	}
 	if (stateMatrix[2][0] == userIDParam and stateMatrix[1][1] == userIDParam and stateMatrix[0][2] == userIDParam) {
+		sf::sleep(sf::seconds(1.0f));
 		return true;
 	}
 	return false;
