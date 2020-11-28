@@ -29,6 +29,10 @@ int main_game_8(int dif, int pr)
     timers.setCharacterSize(90);
     timers.setFillColor(sf::Color::Black);
     timers.setPosition(512 - timers.getLocalBounds().width / 2, 20);
+    sf::Text countt("count", font);
+    countt.setCharacterSize(90);
+    countt.setFillColor(sf::Color::Black);
+    countt.setPosition(120, 20);
 
     double cnt = 0;
     bool sw = true,pan=false;
@@ -117,6 +121,7 @@ int main_game_8(int dif, int pr)
             }
         }
         window.draw(timers);
+        window.draw(countt);
         window.display();
         timer = clock.getElapsedTime().asSeconds();
         if (cnt > 0);
@@ -125,7 +130,12 @@ int main_game_8(int dif, int pr)
         int cms = (cnt - cs) * 100;
 
         timers.setString(std::to_string(cs) + "." + std::to_string(cms));
-        timers.setPosition(512 - timers.getLocalBounds().width / 2, 20);
+        timers.setPosition(750, 20);
+
+        window.draw(countt);
+        //window.display();
+        countt.setString("count: " + std::to_string(num) + " / 50" );
+        countt.setPosition(10, 20);
     }
 
     return 0;
