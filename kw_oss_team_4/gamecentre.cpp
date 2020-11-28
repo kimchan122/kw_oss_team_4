@@ -8,7 +8,7 @@ void game_centre(int dif) {
 	main_story(dif);
 	midres(cnt);
 	cnt-=main_game_1(dif,0);
-	midres(cnt);/*
+	midres(cnt);
 	cnt-=main_game_2(dif,0);
 	midres(cnt);
 	cnt -= main_game_3(dif,0);
@@ -22,7 +22,7 @@ void game_centre(int dif) {
 	cnt -= main_game_8(dif, 0);
 	midres(cnt);
 	cnt -= main_game_9(dif, 0);
-	midres(cnt);*/
+	midres(cnt);
 	result(cnt);
 }
 void midres(int c) {
