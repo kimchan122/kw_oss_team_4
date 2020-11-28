@@ -237,6 +237,11 @@ int main_game_3(int dif, int pr)
     sf::Sprite smile; // 객체 man을 생성
     smile.setTexture(tsmile); // 객체 man의 이미지를 tman의 이미지로 지정
 
+    sf::SoundBuffer sbClick;
+    sbClick.loadFromFile("sound/game3/click.mp3");
+    sf::Sound soundClick;
+    soundClick.setBuffer(sbClick);
+
     Result[0].loadFromFile("img/game3/win.jpg");
     Result[1].loadFromFile("img/game3/lose.jpg");
     Sprite result[2];
@@ -296,6 +301,7 @@ int main_game_3(int dif, int pr)
             {
                 if (event.mouseButton.button == sf::Mouse::Left) //마우스 좌클릭 이벤트
                 {
+                    soundClick.play();
                     Vector2i pos = Mouse::getPosition(window);
                     mouseX = pos.x;
                     mouseY = pos.y;
@@ -376,6 +382,7 @@ int main_game_3(int dif, int pr)
                 }
                 else if (event.mouseButton.button == sf::Mouse::Right) //마우스 우클릭 이벤트
                 {
+                    soundClick.play();
                     Vector2i pos = Mouse::getPosition(window);
                     mouseX = pos.x;
                     mouseY = pos.y;

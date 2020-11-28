@@ -1,12 +1,4 @@
 ﻿  game.cpp
-  gamecentre.cpp
-C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(56,24): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(100,24): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(113,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(128,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(143,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(158,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(175,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   game_1.cpp
   game_2.cpp
 C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_2.cpp(16,15): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -21,7 +13,7 @@ C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_2.cpp(23
 C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_2.cpp(233,49): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_2.cpp(233,38): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   game_3.cpp
-C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_3.cpp(437,31): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_3.cpp(444,31): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   game_5.cpp
 C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_5.cpp(109,31): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_5.cpp(109,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -77,6 +69,14 @@ C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_9.cpp(26
 C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_9.cpp(273,78): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_9.cpp(273,62): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_9.cpp(237,35): warning C4390: ';': 제어된 빈 문이 있습니다. 이 문이 필요합니까?
+  gamecentre.cpp
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(56,24): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(100,24): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(113,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(128,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(143,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(158,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\gamecentre.cpp(175,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   main.cpp
   main_difficulty.cpp
   main_makers.cpp
@@ -84,4 +84,5 @@ C:\Users\HanYS\source\repos\kimchan122\kw_oss_team_4\kw_oss_team_4\game_9.cpp(23
   practice.cpp
   selectmode.cpp
   코드를 생성하고 있습니다...
+  LINK : C:\Users\HanYS\Source\Repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
   kw_oss_team_4.vcxproj -> C:\Users\HanYS\Source\Repos\kimchan122\kw_oss_team_4\kw_oss_team_4\Debug\kw_oss_team_4.exe
