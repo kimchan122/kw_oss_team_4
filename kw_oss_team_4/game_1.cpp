@@ -163,9 +163,6 @@ int main_game_1(int dif, int pr) // 난이도를 나타내는 dif. 1 : easy, 2 : normal,
         if (playerRect.contains(spBall.getPosition())) //공과 플레이어 충돌하면
         {
             powerY = -powerY;
-            //float temp = spBall.getPosition().x - spPlayer.getPosition().x;
-            //powerX += temp / 100;
-            //powerY += temp / 100;
 
             if (powerDir==1 && powerX <= 0)
                 powerX = -powerX;

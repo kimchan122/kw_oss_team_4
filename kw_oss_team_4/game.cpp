@@ -17,7 +17,6 @@ sf::SoundBuffer tcpuclick;
 sf::Sound cpuclick;
 sf::SoundBuffer tblop;
 sf::Sound blop;
-
 void musicstart() {
     mainbgm.loadFromFile("sound/main/SellBuyMusic_guitarandbeat.wav");
     mainsound.setBuffer(mainbgm);
