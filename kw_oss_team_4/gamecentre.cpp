@@ -22,6 +22,9 @@ void game_centre(int dif) {
 	cnt -= main_game_8(dif, 0);
 	midres(cnt);
 	cnt -= main_game_9(dif, 0);
+
+
+
 	midres(cnt);
 	result(cnt);
 }
